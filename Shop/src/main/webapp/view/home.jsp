@@ -11,10 +11,10 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 </head>
-<body class=text-center>
+<body>
 	<div>
 	<c:import url="./menu.jsp" />
-		<div>
+		<div  class=text-center>
 			<h1>Witaj na moim sklepie!</h1>
 			<h2>Zarejestruj się by zyskać dostęp do systemu!</h2>
 			<h3>

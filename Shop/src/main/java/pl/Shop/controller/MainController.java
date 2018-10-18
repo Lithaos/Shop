@@ -24,15 +24,15 @@ public class MainController {
 		return "home";
 	}
 
-	@RequestMapping(value = "/formularz", method = RequestMethod.GET)
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String formularz(@ModelAttribute("user") User user, Model model) {
-		return "formularz";
+		return "register";
 	}
 
-	@RequestMapping(value = "/formularz", method = RequestMethod.POST)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registration(@ModelAttribute("user") @Valid User user, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			return "formularz";
+			return "register";
 		} else {
 			User newUser = new User();
 			newUser = user;
@@ -40,15 +40,15 @@ public class MainController {
 			return "home";
 		}
 	}
+
 	@RequestMapping("/login")
 	public String login(Model model) {
 		return "login";
 	}
-	
+
 	@RequestMapping("/403")
 	public String noPermision() {
 		return "error";
 	}
-
 
 }

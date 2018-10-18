@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: Shop
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Dell
+Built-By: Wojciech
 Implementation-Vendor-Id: pl
-Build-Jdk: 1.8.0_191
+Build-Jdk: 1.8.0_181
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/Shop
 Created-By: Maven Integration for Eclipse
