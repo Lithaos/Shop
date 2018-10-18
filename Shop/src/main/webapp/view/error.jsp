@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 
 <html lang="pl">
@@ -13,18 +13,12 @@
 </head>
 <body class=text-center>
 	<div>
-	<c:import url="./menu.jsp" />
 		<div>
-			<h1>Witaj na moim sklepie!</h1>
-			<h2>Zarejestruj się by zyskać dostęp do systemu!</h2>
+			<h1>Nie masz dostępu do tej strony!!</h1>
 			<h3>
-				<a href="/formularz"> Wypełnij fomularz!</a>
+				<a href="/"> Wróć na strone główną!</a>
 			</h3>
-			<h2>
-				Jeśli masz konto, przejdz do<a href="/login"> logowania!</a>
-			</h2>
 		</div>
 	</div>
-
 </body>
 </html>

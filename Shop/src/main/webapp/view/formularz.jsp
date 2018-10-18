@@ -11,8 +11,8 @@
 <body>
 	<form:form action="/formularz" modelAttribute="user" method="post">
 	Imię: 
-		<form:input path="name" id="name"></form:input>
-		<span><form:errors path="name" cssclass="error" /></span>
+		<form:input path="userName" id="userName"></form:input>
+		<span><form:errors path="userName" cssclass="error" /></span>
 		<br />	
 	Hasło: 
 		<form:input path="password" id="password" type="password"></form:input>

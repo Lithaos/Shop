@@ -16,7 +16,7 @@ public class User {
 	private Long id;
 
 	@NotEmpty(message = "Podaj imie!")
-	private String name;
+	private String userName;
 
 	@NotEmpty(message = "Podaj hasło!")
 	private String password;
@@ -24,21 +24,15 @@ public class User {
 	@NotEmpty(message = "Musisz podać email!")
 	@Email(message = "Podaj poprawny adres email!")
 	private String email;
+
+	private String role="ROLE_USER";
 	
-	public Long getId() {
-		return id;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -57,4 +51,14 @@ public class User {
 		this.email = email;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+ 
+	
+	
 }

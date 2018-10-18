@@ -44,6 +44,11 @@ public class MainController {
 	public String login(Model model) {
 		return "login";
 	}
+	
+	@RequestMapping("/403")
+	public String noPermision() {
+		return "error";
+	}
 
 
 }
