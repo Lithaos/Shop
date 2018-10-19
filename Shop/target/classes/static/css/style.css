@@ -58,3 +58,11 @@ ul.topnav li.right a:hover {
 	padding: 3% 3%;
 	width: 30%;
 }
+.tableofusers{
+	padding-top: 1%;
+	margin:auto;
+	width: 60%;
+}
+.tableofusers h2{
+	padding-bottom: 3%;
+}

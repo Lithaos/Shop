@@ -18,7 +18,7 @@
 			<h1>Witaj na moim sklepie!</h1>
 			<h2>Zarejestruj się by zyskać dostęp do systemu!</h2>
 			<h3>
-				<a href="/formularz"> Wypełnij fomularz!</a>
+				<a href="/register"> Wypełnij fomularz!</a>
 			</h3>
 			<h2>
 				Jeśli masz konto, przejdz do<a href="/login"> logowania!</a>

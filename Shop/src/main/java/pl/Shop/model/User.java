@@ -15,7 +15,7 @@ public class User {
 	@GeneratedValue
 	private Long id;
 
-	@NotEmpty(message = "Podaj imie!")
+	@NotEmpty(message = "Podaj login!")
 	private String userName;
 
 	@NotEmpty(message = "Podaj hasło!")
@@ -25,8 +25,12 @@ public class User {
 	@Email(message = "Podaj poprawny adres email!")
 	private String email;
 
-	private String role="ROLE_USER";
+	private String role="USER";
 	
+	public Long getId() {
+		return id;
+	}
+
 	public String getUserName() {
 		return userName;
 	}

@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.roles("USER").and().withUser("admin").password("1").roles("ADMIN");
 		
 		auth.jdbcAuthentication().dataSource(dataSource)
-        .usersByUsernameQuery(userQuery).authoritiesByUsernameQuery(roleQuery) 
+        .usersByUsernameQuery(userQuery).authoritiesByUsernameQuery(roleQuery)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance());
 		
 		
@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/h2").hasRole("ADMIN").anyRequest()
+		http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/h2").access("hasAuthority('ADMIN')").anyRequest()
 				.permitAll().and().formLogin().loginPage("/login")
 			      .defaultSuccessUrl("/",true)
 			      .failureUrl("/login?error=true");

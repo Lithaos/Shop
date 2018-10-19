@@ -50,5 +50,12 @@ public class MainController {
 	public String noPermision() {
 		return "error";
 	}
+	
+	
+	@RequestMapping("/users")
+	public String users(Model model) {
+		model.addAttribute("users", userRepository.findAll());
+		return "users";
+	}
 
 }
