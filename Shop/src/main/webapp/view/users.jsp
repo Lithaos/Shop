@@ -35,10 +35,17 @@
 							<td>${user.getUserName()}</td>
 							<td>${user.getEmail()}</td>
 							<td>${user.getRole()}</td>
-							<sec:authorize access="hasRole('ADMIN')">
-								<td><form action="users/${user.getId()}">
-										<input type="submit" class="btn btn-default"
-											value="Edytuj" />
+							<sec:authorize access="hasAuthority('USER')">
+								<td><form action="user/${user.getId()}">
+										<input type="submit" class="btn btn-default" value="Wyświetl" />
+									</form></td>
+							</sec:authorize>
+							<sec:authorize access="hasAuthority('ADMIN')">
+								<td><form action="user/${user.getId()}">
+										<input type="submit" class="btn btn-default" value="Edytuj" />
+									</form>
+									<form action="/delete/${user.getId()}">
+										<input type="submit" class="btn btn-default" value="Usuń" />
 									</form></td>
 							</sec:authorize>
 						</tr>

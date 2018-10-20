@@ -25,8 +25,8 @@ public class User {
 	@Email(message = "Podaj poprawny adres email!")
 	private String email;
 
-	private String role="USER";
-	
+	private String role = "USER";
+
 	public Long getId() {
 		return id;
 	}
@@ -62,7 +62,5 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
- 
-	
-	
+
 }

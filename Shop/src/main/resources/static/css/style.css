@@ -16,13 +16,14 @@ ul.topnav li {
 	float: left;
 }
 
-ul.topnav li span{
+ul.topnav li span {
 	display: block;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 }
+
 ul.topnav li a {
 	display: block;
 	color: white;
@@ -39,6 +40,7 @@ ul.topnav li a.active {
 ul.topnav li.right {
 	float: right;
 }
+
 ul.topnav li.right a:hover {
 	color: red;
 }
@@ -54,15 +56,17 @@ ul.topnav li.right a:hover {
 	color: white;
 }
 
-.form{
+.form {
 	padding: 3% 3%;
 	width: 30%;
 }
-.tableofusers{
+
+.tableofusers {
 	padding-top: 1%;
-	margin:auto;
+	margin: auto;
 	width: 60%;
 }
-.tableofusers h2{
+
+.tableofusers h2 {
 	padding-bottom: 3%;
 }
