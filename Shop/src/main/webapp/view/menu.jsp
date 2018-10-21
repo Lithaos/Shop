@@ -19,6 +19,7 @@
 					id="now" class="java.util.Date" /> <fmt:formatDate value="${now}"
 					dateStyle="long" /></span></li>
 		<li><a href="<c:url value="/users" />">Lista użytkowników</a></li>
+		<li><a href="<c:url value="/categories" />">Kategorie</a></li>
 		<li class="right"><a href="<c:url value="/logout" />">Wyloguj</a></li>
 	</ul>
 </sec:authorize>
@@ -26,6 +27,7 @@
 	<ul class="topnav">
 		<li><a class="active" href="/">Strona główna</a></li>
 		<li><a href="/register">Rejestracja</a></li>
+		<li><a href="/categories">Kategorie</a></li>
 		<li class="right"><a href="/login">Zaloguj</a></li>
 	</ul>
 </sec:authorize>

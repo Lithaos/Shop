@@ -18,33 +18,23 @@
 		<c:import url="./menu.jsp" />
 		<div class="tableofusers">
 
-			<h2 class="text-center">Lista użytkowników:</h2>
+			<h2 class="text-center">Lista kategorii:</h2>
 			<table class="table">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">Nick</th>
-						<th scope="col">Email</th>
-						<th scope="col">Role</th>
+						<th scope="col">Nazwa</th>
+						<th scope="col">Opis</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="user" items="${users}" varStatus="myIndex">
+					<c:forEach var="categories" items="${categories}" varStatus="myIndex">
 						<tr>
 							<th scope="row">${myIndex.index+1}</th>
-							<td>${user.getUserName()}</td>
-							<td>${user.getEmail()}</td>
-							<td>${user.getRole()}</td>
-							<sec:authorize access="hasAuthority('USER')">
-								<td><form action="user/${user.getId()}">
-										<input type="submit" class="btn btn-default" value="Wyświetl" />
-									</form></td>
-							</sec:authorize>
+							<td>${categories.getCategoryName()}</td>
+							<td>${categories.getDescriptionOfCategory()}</td>
 							<sec:authorize access="hasAuthority('ADMIN')">
-								<td><form action="user/${user.getId()}">
-										<input type="submit" class="btn btn-default" value="Edytuj" />
-									</form>
-									<form action="/deleteUser/${user.getId()}">
+									<td><form action="/deleteCategory/${categories.getId()}">
 										<input type="submit" class="btn btn-default" value="Usuń" />
 									</form></td>
 							</sec:authorize>
@@ -52,6 +42,11 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			<sec:authorize access="hasAuthority('ADMIN')">
+								<td><form action="/addCategory">
+										<input type="submit" class="btn btn-default" value="Dodaj kategorie" />
+									</form></td>
+							</sec:authorize>
 		</div>
 	</div>
 </body>
