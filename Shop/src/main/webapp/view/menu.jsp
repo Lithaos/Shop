@@ -20,6 +20,7 @@
 					dateStyle="long" /></span></li>
 		<li><a href="<c:url value="/users" />">Lista użytkowników</a></li>
 		<li><a href="<c:url value="/categories" />">Kategorie</a></li>
+		<li><a href="<c:url value="/products" />">Produkty</a></li>
 		<li class="right"><a href="<c:url value="/logout" />">Wyloguj</a></li>
 	</ul>
 </sec:authorize>
