@@ -1,5 +1,7 @@
 package pl.Shop.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,12 +32,16 @@ public class CategoriesController {
 	}
 
 	@RequestMapping(value = "/addCategory", method = RequestMethod.POST)
-	public String addCategory(@ModelAttribute("categories") CategoryOfProduct category, BindingResult result,
+	public String addCategory(@ModelAttribute("categories") @Valid CategoryOfProduct category, BindingResult result,
 			Model model) {
-		CategoryOfProduct newCategory = new CategoryOfProduct();
-		newCategory = category;
-		categoryRepository.save(newCategory);
-		return "redirect:/categories";
+		if (result.hasErrors()) {
+			return "addCategory";
+		} else {
+			CategoryOfProduct newCategory = new CategoryOfProduct();
+			newCategory = category;
+			categoryRepository.save(newCategory);
+			return "redirect:/categories";
+		}
 
 	}
 

@@ -12,7 +12,7 @@ public class CategoryOfProduct {
 	@GeneratedValue
 	private Long id;
 
-	@NotEmpty
+	@NotEmpty(message = "Musisz podać nazwę kategorii!")
 	private String categoryName;
 
 	private String descriptionOfCategory;

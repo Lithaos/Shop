@@ -20,6 +20,7 @@
 	Nazwa kategorii: 
 		<form:input path="categoryName" id="categoryName" class="form-control"
 					value=''></form:input>
+		<span><form:errors path="categoryName" cssclass="error" /></span>
 				<br />	
 	Opis kategorii 
 		<form:input path="descriptionOfCategory" id="descriptionOfCategory" class="form-control" value=''></form:input>
