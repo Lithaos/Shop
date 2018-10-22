@@ -33,7 +33,8 @@
 				<br />
 	Kategoria produktu:
 					<form:select path="category" id="category">
-					<c:forEach var="categories" items="${categories}" varStatus="myIndex">
+					<c:forEach var="categories" items="${categories}"
+						varStatus="myIndex">
 						<option value='${categories.getCategoryName()}'>${categories.getCategoryName()}</option>
 					</c:forEach>
 				</form:select>

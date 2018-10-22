@@ -13,8 +13,9 @@
 </head>
 <body>
 	<div>
-	<c:import url="./menu.jsp" />
-		<div  class=text-center>
+		<c:import url="./menu.jsp" />
+		<c:import url="./categoryBar.jsp" />
+		<div class="text-center center">
 			<h1>Witaj na moim sklepie!</h1>
 			<h2>Zarejestruj się by zyskać dostęp do systemu!</h2>
 			<h3>

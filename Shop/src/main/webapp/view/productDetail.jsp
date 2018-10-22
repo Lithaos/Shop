@@ -25,9 +25,9 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>${userDetail.getUserName()}</td>
-						<td>${userDetail.getEmail()}</td>
-						<td>${userDetail.getRole()}</td>
+						<td>${productDetail.getProductName()}</td>
+						<td>${productDetail.getDescriptionOfProduct()}</td>
+						<td>${productDetail.getPriceOfProduct()}</td>
 					</tr>
 
 				</tbody>
@@ -37,21 +37,27 @@
 			</form>
 		</sec:authorize>
 		<sec:authorize access="hasAuthority('ADMIN')">
-			<form:form action="/user/${userId}" modelAttribute="userDetail"
-				method="post">
-	Login: 
-		<form:input path="userName" id="userName" class="form-control"
+			<form:form action="/products/${productId}"
+				modelAttribute="productDetail" method="post">
+	Nazwa: 
+		<form:input path="productName" id="productName" class="form-control"
 					value=''></form:input>
 				<br />	
-	Adres email: 
-		<form:input path="email" id="email" class="form-control" value=''></form:input>
+	Opis: 
+		<form:input path="descriptionOfProduct" id="descriptionOfProduct"
+					class="form-control" value=''></form:input>
+				<br />	
+	Cena: 
+		<form:input path="priceOfProduct" id="priceOfProduct"
+					class="form-control" value=''></form:input>
 				<br />
-	Uprawnienia: 
+	Kategoria: 
 	
-	<form:select path="role" id="role">
-					<option value="USER">USER</option>
-					<option value="ADMIN">ADMIN</option>
-
+	<form:select path="category" id="category">
+					<c:forEach var="categories" items="${categories}"
+						varStatus="myIndex">
+						<option value='${categories.getCategoryName()}'>${categories.getCategoryName()}</option>
+					</c:forEach>
 				</form:select>
 				<br />
 				<br />

@@ -70,3 +70,67 @@ ul.topnav li.right a:hover {
 .tableofusers h2 {
 	padding-bottom: 3%;
 }
+
+.leftbar {
+	width: 8%;
+	left: 1%; 
+	margin-top : 1%;
+	background-color: #5B5D74;
+	position: absolute;
+	color: white;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+.leftBarContent {
+	padding: 10%;
+}
+
+.categoryItem {
+	margin-bottom: 10px;
+}
+
+.categoryItem a {
+	color: white;
+	text-decoration: none;
+}
+
+.categoryItem a:hover {
+	color: red;
+	text-decoration: none;
+}
+
+.center {
+	float: right;
+	width: 90%;
+}
+
+#cart{
+	padding: 10px 14px 0 14px;
+	text-align: center;
+	position: relative;
+}
+
+#cart img{
+	height: 30px;
+}
+#cart::after{
+	border-radius: 2em;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    font-size: 0.7em;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #f8f8f8;
+    content: attr(data-content);
+    position: absolute;
+    top: 0.5em;
+    left: 2.5em;
+    border: 2px solid #f8f8f8;
+    display: block;
+    text-align: center;
+    min-width: 1.8em;
+    background: green;
+    font-size: 0.70em;
+}

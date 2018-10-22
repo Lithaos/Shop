@@ -57,4 +57,24 @@ public class ProductsController {
 
 	}
 
+	@RequestMapping(value = "/products/{productId}")
+	public String productDetail(@PathVariable long productId, Model model) {
+		model.addAttribute("categories", categoryRepository.findAll());
+		model.addAttribute("productDetail", productsRepository.getOne(productId));
+		model.addAttribute("productId", productId);
+		return "productDetail";
+	}
+
+	@RequestMapping(value = "/products/{productId}", method = RequestMethod.POST)
+	public String EditProduct(@PathVariable long productId, @ModelAttribute("product") Product product, Model model) {
+		Product memory = productsRepository.getOne(productId);
+		memory.setProductName(product.getProductName());
+		memory.setDescriptionOfProduct(product.getDescriptionOfProduct());
+		memory.setPriceOfProduct(product.getPriceOfProduct());
+		memory.setCategory(product.getCategory());
+		productsRepository.save(memory);
+		return "redirect:/products";
+
+	}
+
 }

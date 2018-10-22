@@ -15,13 +15,18 @@
 <sec:authentication var="user" property="principal" />
 <sec:authorize access="isAuthenticated()">
 	<ul class="topnav">
-		<li><span>Witaj ${user.username} dziś jest: <jsp:useBean
-					id="now" class="java.util.Date" /> <fmt:formatDate value="${now}"
-					dateStyle="long" /></span></li>
+		<li><a class="active" href="<c:url value="/" />">Strona
+				główna</a></li>
 		<li><a href="<c:url value="/users" />">Lista użytkowników</a></li>
 		<li><a href="<c:url value="/categories" />">Kategorie</a></li>
 		<li><a href="<c:url value="/products" />">Produkty</a></li>
+
 		<li class="right"><a href="<c:url value="/logout" />">Wyloguj</a></li>
+		<li class="right"><span>Witaj ${user.username} dziś jest:
+				<jsp:useBean id="now" class="java.util.Date" /> <fmt:formatDate
+					value="${now}" dateStyle="long" />
+		</span></li>
+		<li class="right "><a id="cart" href="/cart" data-content="2"><img src=css/cart.png></a></li>
 	</ul>
 </sec:authorize>
 <sec:authorize access="!isAuthenticated()">

@@ -41,6 +41,9 @@
 									<td><form action="/deleteProduct/${products.getId()}">
 										<input type="submit" class="btn btn-default" value="Usuń" />
 									</form></td>
+									<td><form action="/products/${products.getId()}">
+										<input type="submit" class="btn btn-default" value="Edytuj" />
+									</form></td>
 							</sec:authorize>
 						</tr>
 					</c:forEach>

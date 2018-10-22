@@ -28,13 +28,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="categories" items="${categories}" varStatus="myIndex">
+					<c:forEach var="categories" items="${categories}"
+						varStatus="myIndex">
 						<tr>
 							<th scope="row">${myIndex.index+1}</th>
 							<td>${categories.getCategoryName()}</td>
 							<td>${categories.getDescriptionOfCategory()}</td>
 							<sec:authorize access="hasAuthority('ADMIN')">
-									<td><form action="/deleteCategory/${categories.getId()}">
+								<td><form action="/deleteCategory/${categories.getId()}">
 										<input type="submit" class="btn btn-default" value="Usuń" />
 									</form></td>
 							</sec:authorize>
@@ -43,10 +44,11 @@
 				</tbody>
 			</table>
 			<sec:authorize access="hasAuthority('ADMIN')">
-								<td><form action="/addCategory">
-										<input type="submit" class="btn btn-default" value="Dodaj kategorie" />
-									</form></td>
-							</sec:authorize>
+				<td><form action="/addCategory">
+						<input type="submit" class="btn btn-default"
+							value="Dodaj kategorie" />
+					</form></td>
+			</sec:authorize>
 		</div>
 	</div>
 </body>

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import pl.Shop.model.CategoryOfProduct;
 import pl.Shop.repository.CategoryRepository;
+import pl.Shop.repository.ProductRepository;
 
 @Controller
 public class CategoriesController {
@@ -20,6 +21,10 @@ public class CategoriesController {
 	@Autowired
 	CategoryRepository categoryRepository;
 
+	@Autowired
+	ProductRepository productRepository;
+	
+	
 	@RequestMapping("/categories")
 	public String categories(Model model) {
 		model.addAttribute("categories", categoryRepository.findAll());
@@ -50,6 +55,15 @@ public class CategoriesController {
 		CategoryOfProduct memory = categoryRepository.getOne(categoryId);
 		categoryRepository.delete(memory);
 		return "redirect:/categories";
+
+	}
+	
+	@RequestMapping(value = "/categories/{categoryName}", method = RequestMethod.GET)
+	public String productOfCategory(@PathVariable String categoryName, Model model) {
+		model.addAttribute("categories", categoryRepository.findAll());
+		model.addAttribute("category", categoryName);
+		model.addAttribute("products", productRepository.findAll());
+		return "categoryDetail";
 
 	}
 

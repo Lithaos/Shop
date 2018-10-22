@@ -20,19 +20,20 @@
 	Nazwa kategorii: 
 		<form:input path="categoryName" id="categoryName" class="form-control"
 					value=''></form:input>
-		<span><form:errors path="categoryName" cssclass="error" /></span>
+				<span><form:errors path="categoryName" cssclass="error" /></span>
 				<br />	
 	Opis kategorii 
-		<form:input path="descriptionOfCategory" id="descriptionOfCategory" class="form-control" value=''></form:input>
-				<br /> 
+		<form:input path="descriptionOfCategory" id="descriptionOfCategory"
+					class="form-control" value=''></form:input>
+				<br />
 				<input type="submit" class="btn btn-default" value="Zapisz zmiany" />
 			</form:form>
 			<form action="/categories">
-			<input type="submit" class="btn btn-default" value="Wróć" />
-		</form>
+				<input type="submit" class="btn btn-default" value="Wróć" />
+			</form>
 		</sec:authorize>
 
-		
+
 	</div>
 </body>
 </html>
