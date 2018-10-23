@@ -15,6 +15,7 @@ public class User {
 	@GeneratedValue
 	private Long id;
 
+	
 	@NotEmpty(message = "Podaj login!")
 	private String userName;
 
@@ -26,7 +27,7 @@ public class User {
 	private String email;
 
 	private String role = "USER";
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -62,5 +63,12 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", email=" + email + ", role="
+				+ role + "]";
+	}
+
 
 }

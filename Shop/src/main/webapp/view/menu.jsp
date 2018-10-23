@@ -22,6 +22,7 @@
 		<li><a href="<c:url value="/products" />">Produkty</a></li>
 
 		<li class="right"><a href="<c:url value="/logout" />">Wyloguj</a></li>
+		<li class="right"><a href="<c:url value="/myaccount" />">Moje konto</a></li>
 		<li class="right"><span>Witaj ${user.username} dziś jest:
 				<jsp:useBean id="now" class="java.util.Date" /> <fmt:formatDate
 					value="${now}" dateStyle="long" />
