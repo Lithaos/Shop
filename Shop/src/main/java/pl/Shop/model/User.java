@@ -1,8 +1,10 @@
 package pl.Shop.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -15,7 +17,6 @@ public class User {
 	@GeneratedValue
 	private Long id;
 
-	
 	@NotEmpty(message = "Podaj login!")
 	private String userName;
 
@@ -27,7 +28,10 @@ public class User {
 	private String email;
 
 	private String role = "USER";
-	
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private Address address;
+
 	public Long getId() {
 		return id;
 	}
@@ -64,11 +68,18 @@ public class User {
 		this.role = role;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", email=" + email + ", role="
 				+ role + "]";
 	}
-
 
 }
