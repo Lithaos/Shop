@@ -6,11 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
-@Entity
-@Table(name = "User")
+@Entity	
+@Table(name = "User",uniqueConstraints={@UniqueConstraint(columnNames={"userName"})})
 public class User {
 
 	@Id

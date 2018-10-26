@@ -21,6 +21,9 @@
 						<th scope="col">Nick</th>
 						<th scope="col">Email</th>
 						<th scope="col">Role</th>
+						<th scope="col">Miasto</th>
+						<th scope="col">Adres</th>
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -28,6 +31,8 @@
 						<td>${userDetail.getUserName()}</td>
 						<td>${userDetail.getEmail()}</td>
 						<td>${userDetail.getRole()}</td>
+						<td>${userDetail.getAddress().getCity()}</td>
+						<td>${userDetail.getAddress().getStreet()} ${userDetail.getAddress().getNumber()}</td>
 					</tr>
 
 				</tbody>

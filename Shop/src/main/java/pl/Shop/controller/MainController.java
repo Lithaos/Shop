@@ -1,13 +1,8 @@
 package pl.Shop.controller;
 
-import java.security.Principal;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -62,41 +57,5 @@ public class MainController {
 	@RequestMapping("/403")
 	public String noPermision() {
 		return "error";
-	}
-
-	private Boolean success = false;
-
-	@RequestMapping(value = "/myaccount", method = RequestMethod.GET)
-	public String myAccount(Principal principal, Model model) {
-		if (success) {
-			model.addAttribute("created", true);
-		}
-		success = false;
-		String currentPrincipalName = principal.getName();
-		model.addAttribute("principal", userRepository.findByUserName(currentPrincipalName));
-		return "myAccount";
-	}
-
-	@RequestMapping(value = "/myaccount", method = RequestMethod.POST)
-	public String myAccount(@ModelAttribute("principal") @Valid User principal, BindingResult result, Model model) {
-
-		if (result.hasErrors()) {
-			success = false;
-			return "myAccount";
-
-		} else {
-			success = true;
-			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-			User user = userRepository.findByUserName(authentication.getName());
-			user.setUserName(principal.getUserName());
-			user.setPassword(principal.getPassword());
-			user.setEmail(principal.getEmail());
-			userRepository.save(user);
-			UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(
-					user.getUserName(), user.getPassword());
-			SecurityContextHolder.getContext().setAuthentication(authRequest);
-			return "redirect:/myaccount";
-		}
-
 	}
 }

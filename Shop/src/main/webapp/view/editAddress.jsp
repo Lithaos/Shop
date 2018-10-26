@@ -12,19 +12,20 @@
 </head>
 <body>
 	<c:import url="./menu.jsp" />
-	<h1>Dane konta:</h1>
-	<ul>
-		<li>Login: ${user.getUserName()}</li>
-		<li>Email: ${user.getEmail()}</li>
-		<li>Uprawnienia: ${user.getRole()}</li>
-	</ul>
-	<a href="/editaccount"><input type="submit" class="btn btn-default"
-		value="Zmien dane konta" /></a>
-	<a href="/editaddress"><input type="submit" class="btn btn-default"
-		value="Zmien adres" /> </a>
-
-	<c:if test="${created}">
-		<h1>Poprawnie zmieniono dane!</h1>
-	</c:if>
+	<div class="form-group form">
+		<form:form action="/editaddress" modelAttribute="newAddress"
+			method="post">
+	Ulica: 
+		<form:input path="street" id="street" class="form-control"></form:input>
+			<br />	
+	Numer domu: 
+		<form:input path="number" id="number" class="form-control"></form:input>
+			<br />
+	Miasto: 
+		<form:input path="city" id="city" class="form-control"></form:input>
+			<br />	
+			<input type="submit" class="btn btn-default" value="Zapisz zmiany" />
+		</form:form>
+	</div>
 </body>
 </html>
