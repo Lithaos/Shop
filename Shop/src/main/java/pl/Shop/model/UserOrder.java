@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -17,7 +18,7 @@ public class UserOrder {
 	@OneToOne
 	private User user;
 
-	@OneToMany(mappedBy = "id")
+	@OneToMany
 	private List<Product> orderedItem;
 
 	public User getUser() {
