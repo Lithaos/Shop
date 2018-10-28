@@ -2,38 +2,38 @@ package pl.Shop.model;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class UserOrder {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "USER_ORDER_ID")
-	private int userOrderId;
+	@GeneratedValue
+	private long id;
 
-	@OneToMany(mappedBy = "userOrder")
-	private List<OrderedItem> orderedItem;
+	@OneToOne
+	private User user;
 
-	public List<OrderedItem> getOrderedItem() {
-		return orderedItem;
+	@OneToMany(mappedBy = "id")
+	private List<Product> orderedItem;
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setOrderedItems(List<OrderedItem> orderedItems) {
-		this.orderedItem = orderedItems;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public int getUserOrderId() {
-		return this.userOrderId;
+	public long getId() {
+		return id;
 	}
 
-	public void setUserOrderId(int orderId) {
-		this.userOrderId = orderId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

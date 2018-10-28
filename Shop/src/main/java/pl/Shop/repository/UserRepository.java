@@ -6,5 +6,5 @@ import pl.Shop.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	User findByUserName(String name);
+	public User findByUserName(String name);
 }

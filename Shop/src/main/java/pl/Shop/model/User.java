@@ -33,6 +33,9 @@ public class User {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
 
+	@OneToOne(cascade = CascadeType.ALL)
+	private UserOrder userOrder;
+
 	public Long getId() {
 		return id;
 	}
@@ -75,6 +78,14 @@ public class User {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public UserOrder getUserOrder() {
+		return userOrder;
+	}
+
+	public void setUserOrder(UserOrder userOrder) {
+		this.userOrder = userOrder;
 	}
 
 	@Override
