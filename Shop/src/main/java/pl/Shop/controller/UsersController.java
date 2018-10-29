@@ -75,11 +75,22 @@ public class UsersController {
 	
 
 	@RequestMapping(value = "/editaccount", method = RequestMethod.GET)
-	public String editAccount(Principal principal, Model model) {
-		String currentPrincipalName = principal.getName();
-		model.addAttribute("principal", userRepository.findByUserName(currentPrincipalName));
-		return "editAccount";
-	}
+	public String editAccount(Model model) {
+
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(!authentication.isAuthenticated())
+		{
+			return "login";
+		}
+		else
+		{
+			String currentPrincipalName = authentication.getName();
+			model.addAttribute("principal", userRepository.findByUserName(currentPrincipalName));
+			return "editAccount";
+			
+		}
+		}
 
 	@RequestMapping(value = "/editaccount", method = RequestMethod.POST)
 	public String editAccount(@ModelAttribute("principal") @Valid User principal, BindingResult result, Model model) {

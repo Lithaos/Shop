@@ -22,6 +22,7 @@ public class Product {
 	@NotNull(message = "Musisz podać cenę!")
 	@Min(value = 1, message = "Cena musi być większa od zera!")
 	private Double priceOfProduct;
+	
 
 	private String category;
 
@@ -65,4 +66,11 @@ public class Product {
 		this.category = category;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", productName=" + productName + ", descriptionOfProduct=" + descriptionOfProduct
+				+ ", priceOfProduct=" + priceOfProduct + ", category=" + category + "]";
+	}
+
+	
 }

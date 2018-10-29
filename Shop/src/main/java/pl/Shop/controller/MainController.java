@@ -13,11 +13,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.Shop.model.Address;
 import pl.Shop.model.User;
 import pl.Shop.repository.CategoryRepository;
+import pl.Shop.repository.ProductRepository;
 import pl.Shop.repository.UserRepository;
 
 @Controller
 public class MainController {
 
+	@Autowired
+	ProductRepository pr;
+	
+	
 	@Autowired
 	UserRepository userRepository;
 
@@ -26,6 +31,7 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String main(Model model) {
+		
 		model.addAttribute("categories", categoryRepository.findAll());
 		return "home";
 	}

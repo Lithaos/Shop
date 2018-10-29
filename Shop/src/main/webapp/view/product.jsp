@@ -11,7 +11,7 @@
 				<h4>${products.getProductName()}</h4>
 				<span class="description">
 					${products.getDescriptionOfProduct()} </span> <span class="price">${products.getPriceOfProduct()}
-					zł</span> <a class="btn btn-info pull-right" href="#"><i
+					zł</span> <a class="btn btn-info pull-right" href="/addToCart/${products.getId()}"><i
 					class="icon-shopping-cart"></i>Dodaj</a>
 			</div>
 		</div>

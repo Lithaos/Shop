@@ -34,8 +34,8 @@ public class User {
 	private Address address;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	private UserOrder userOrder;
-
+	private Cart cart;
+	
 	public Long getId() {
 		return id;
 	}
@@ -80,12 +80,12 @@ public class User {
 		this.address = address;
 	}
 
-	public UserOrder getUserOrder() {
-		return userOrder;
+	public Cart getCart() {
+		return cart;
 	}
 
-	public void setUserOrder(UserOrder userOrder) {
-		this.userOrder = userOrder;
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 	@Override
