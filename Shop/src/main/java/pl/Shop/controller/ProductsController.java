@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.Shop.model.Product;
 import pl.Shop.repository.CategoryRepository;
 import pl.Shop.repository.ProductRepository;
+import pl.Shop.repository.UserRepository;
 
 @Controller
 public class ProductsController {
@@ -23,6 +24,9 @@ public class ProductsController {
 
 	@Autowired
 	CategoryRepository categoryRepository;
+
+	@Autowired
+	UserRepository userRepository;
 
 	@RequestMapping("/products")
 	public String products(Model model) {
@@ -52,6 +56,7 @@ public class ProductsController {
 	@RequestMapping(value = "/deleteProduct/{productId}", method = RequestMethod.GET)
 	public String deleteProduct(@PathVariable long productId, Model model) {
 		Product memory = productsRepository.getOne(productId);
+
 		productsRepository.delete(memory);
 		return "redirect:/products";
 
@@ -71,6 +76,7 @@ public class ProductsController {
 		memory.setProductName(product.getProductName());
 		memory.setDescriptionOfProduct(product.getDescriptionOfProduct());
 		memory.setPriceOfProduct(product.getPriceOfProduct());
+		memory.setImgLink(product.getImgLink());
 		memory.setCategory(product.getCategory());
 		productsRepository.save(memory);
 		return "redirect:/products";

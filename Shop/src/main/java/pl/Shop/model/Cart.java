@@ -15,18 +15,25 @@ import javax.persistence.PrimaryKeyJoinColumn;
 public class Cart {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long orderId;
-	
+
 	@OneToOne
 	@PrimaryKeyJoinColumn
 	private User user;
-	
+
 	@ManyToMany
 	private List<Product> products = new ArrayList<Product>();
 
-	
+	private double valeOfCart = 0.0;
 
+	public double getValue() {
+		return valeOfCart;
+	}
+
+	public void setValue(double value) {
+		this.valeOfCart = value;
+	}
 
 	public long getOrderId() {
 		return orderId;
@@ -52,7 +59,4 @@ public class Cart {
 		this.products = products;
 	}
 
-
-	
-	
 }

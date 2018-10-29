@@ -22,7 +22,16 @@ public class Product {
 	@NotNull(message = "Musisz podać cenę!")
 	@Min(value = 1, message = "Cena musi być większa od zera!")
 	private Double priceOfProduct;
-	
+
+	String imgLink;
+
+	public String getImgLink() {
+		return imgLink;
+	}
+
+	public void setImgLink(String imgLink) {
+		this.imgLink = imgLink;
+	}
 
 	private String category;
 
@@ -72,5 +81,4 @@ public class Product {
 				+ ", priceOfProduct=" + priceOfProduct + ", category=" + category + "]";
 	}
 
-	
 }

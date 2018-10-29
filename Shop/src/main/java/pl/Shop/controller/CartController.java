@@ -23,43 +23,51 @@ public class CartController {
 
 	@Autowired
 	UserRepository userRepository;
-	
 
-	private Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-	private User user = userRepository.findByUserName(authentication.getName());
+	private Authentication authentication;
+	private User user;
+
 	@RequestMapping("/cart")
 	public String cart(Model model) {
-		model.addAttribute("productsInCart",user.getCart().getProducts());
+		authentication = SecurityContextHolder.getContext().getAuthentication();
+		user = userRepository.findByUserName(authentication.getName());
+		model.addAttribute("productsInCart", user.getCart().getProducts());
+		model.addAttribute("valeOfCart", user.getCart().getValue());
 		return "cart";
 	}
-	
-	@RequestMapping("/deleteFromCart/{productsId}")
-	public String removeFromCart(@PathVariable long productId, Model model) {
-		
-		// To do!
-		
+
+	@RequestMapping(value = "/deleteFromCart/{productsId}", method = RequestMethod.GET)
+	public String removeFromCart(@PathVariable long productsId, Model model) {
+		authentication = SecurityContextHolder.getContext().getAuthentication();
+		user = userRepository.findByUserName(authentication.getName());
+		user.getCart().getProducts().remove(productsRepository.getOne(productsId));
+		user.getCart().setValue(user.getCart().getValue() - productsRepository.getOne(productsId).getPriceOfProduct());
+		userRepository.save(user);
 		return "redirect:/cart";
 	}
 
 	@RequestMapping(value = "/addToCart/{productId}", method = RequestMethod.GET)
 	public String addToCart(@PathVariable long productId, Model model) {
+		authentication = SecurityContextHolder.getContext().getAuthentication();
+		user = userRepository.findByUserName(authentication.getName());
 		Product product = productsRepository.getOne(productId);
-		User user = userRepository.findByUserName(authentication.getName());
 		if (user.getCart() == null) {
 			user.setCart(new Cart());
 			user.getCart().getProducts().add(product);
+			user.getCart().setValue(product.getPriceOfProduct());
 			userRepository.save(user);
 		} else {
 			if (user.getCart().getProducts().contains(product)) {
 
 			} else {
 				user.getCart().getProducts().add(product);
+				user.getCart().setValue(user.getCart().getValue() + product.getPriceOfProduct());
 				userRepository.save(user);
 			}
 		}
-		
-		
+
 		return "redirect:/cart";
 
 	}
+
 }
