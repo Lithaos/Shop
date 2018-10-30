@@ -114,6 +114,7 @@ ul.topnav li.right a:hover {
 #cart img{
 	height: 30px;
 }
+/*
 #cart::after{
 	border-radius: 2em;
     -moz-background-clip: padding-box;
@@ -134,7 +135,7 @@ ul.topnav li.right a:hover {
     background: green;
     font-size: 0.70em;
 }
-
+*/
 .product {
 	display: block;
 	position: relative;
@@ -225,4 +226,6 @@ ul.topnav li.right a:hover {
 	background: #fff;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 }
-
+.mini{
+	width: 30px;
+}

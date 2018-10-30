@@ -51,6 +51,11 @@
 		<form:input path="priceOfProduct" id="priceOfProduct"
 					class="form-control" value=''></form:input>
 				<br />
+				
+	Link do zdjęcia: 
+		<form:input path="imgLink" id="imgLink"
+					class="form-control" value=''></form:input>
+				<br />
 	Kategoria: 
 	
 	<form:select path="category" id="category">

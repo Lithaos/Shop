@@ -14,27 +14,42 @@
 <body>
 	<div>
 		<c:import url="./menu.jsp" />
-		<sec:authorize access="hasAuthority('USER')">
+		<sec:authorize access="isAuthenticated()">
+
 			<table class="table">
 				<thead>
 					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Img</th>
 						<th scope="col">Nazwa produktu:</th>
 						<th scope="col">Cena</th>
 					</tr>
 				</thead>
 				<tbody>
-				<c:forEach var="productsInCart" items="${productsInCart}" varStatus="myIndex">
+					<c:forEach var="productsInCart" items="${productsInCart}"
+						varStatus="myIndex">
+						<tr>
+							<td>${myIndex.index+1}</td>
+							<td><img class="mini" src="${productsInCart.getImgLink()}"></td>
+							<td>${productsInCart.getProductName()}</td>
+							<td>${productsInCart.getPriceOfProduct()}</td>
+							<td><form action="/deleteFromCart/${productsInCart.getId()}">
+									<input type="submit" class="btn btn-default" value="Usuń" />
+								</form></td>
+						</tr>
+					</c:forEach>
 					<tr>
-						<td>${productsInCart.getProductName()}</td>
-						<td>${productsInCart.getPriceOfProduct()}</td>
-						<td><form action="/deleteFromCart/${productsInCart.getId()}">
-										<input type="submit" class="btn btn-default" value="Usuń" />
-									</form></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>Suma: ${valeOfCart} zł</td>
+						<td></td>
 					</tr>
-				</c:forEach>
 				</tbody>
 			</table>
-			</sec:authorize>
+
+
+		</sec:authorize>
 
 	</div>
 </body>

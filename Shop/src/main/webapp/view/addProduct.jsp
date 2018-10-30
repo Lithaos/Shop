@@ -31,6 +31,10 @@
 					class="form-control" value=''></form:input>
 				<span><form:errors path="priceOfProduct" cssclass="error" /></span>
 				<br />
+	Link do zdjęcia:
+	<form:input path="imgLink" id="imgLink" class="form-control"
+					value=''></form:input>
+				<br />	
 	Kategoria produktu:
 					<form:select path="category" id="category">
 					<c:forEach var="categories" items="${categories}"
