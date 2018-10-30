@@ -27,9 +27,8 @@
 					class="form-control" name='username' id="name">
 				<div class="form-group">
 					<label for="pwd">Password:</label> <input type="password"
-						class="form-control" name='password' id="pwd"> <br>
-					<input name="submit" class="btn btn-default" type="submit"
-						value="submit" />
+						class="form-control" name='password' id="pwd"> <br> <input
+						name="submit" class="btn btn-default" type="submit" value="submit" />
 				</div>
 			</div>
 		</form>

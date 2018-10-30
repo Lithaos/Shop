@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import pl.Shop.model.Address;
+import pl.Shop.model.Cart;
 import pl.Shop.model.User;
 import pl.Shop.repository.CategoryRepository;
 import pl.Shop.repository.ProductRepository;
@@ -21,8 +22,7 @@ public class MainController {
 
 	@Autowired
 	ProductRepository pr;
-	
-	
+
 	@Autowired
 	UserRepository userRepository;
 
@@ -31,7 +31,7 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String main(Model model) {
-		
+
 		model.addAttribute("categories", categoryRepository.findAll());
 		return "home";
 	}
@@ -48,8 +48,8 @@ public class MainController {
 		} else {
 			User newUser = new User();
 			newUser = user;
-			Address address = new Address();
-			newUser.setAddress(address);
+			newUser.setAddress(new Address());
+			newUser.setCart(new Cart());
 			userRepository.save(newUser);
 			return "home";
 		}

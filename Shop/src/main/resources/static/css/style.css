@@ -229,3 +229,6 @@ ul.topnav li.right a:hover {
 .mini{
 	width: 30px;
 }
+.imgOfProduct{
+	max-height: 350px;
+}

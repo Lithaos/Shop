@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Edytuj konto</title>
+<title>Edytuj adres</title>
 </head>
 <body>
 	<c:import url="./menu.jsp" />
@@ -23,7 +23,7 @@
 			<br />
 	Miasto: 
 		<form:input path="city" id="city" class="form-control"></form:input>
-			<br />	
+			<br />
 			<input type="submit" class="btn btn-default" value="Zapisz zmiany" />
 		</form:form>
 	</div>

@@ -23,7 +23,7 @@
 						<th scope="col">Role</th>
 						<th scope="col">Miasto</th>
 						<th scope="col">Adres</th>
-						
+
 					</tr>
 				</thead>
 				<tbody>
@@ -32,7 +32,8 @@
 						<td>${userDetail.getEmail()}</td>
 						<td>${userDetail.getRole()}</td>
 						<td>${userDetail.getAddress().getCity()}</td>
-						<td>${userDetail.getAddress().getStreet()} ${userDetail.getAddress().getNumber()}</td>
+						<td>${userDetail.getAddress().getStreet()}
+							${userDetail.getAddress().getNumber()}</td>
 					</tr>
 
 				</tbody>

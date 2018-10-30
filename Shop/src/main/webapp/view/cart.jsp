@@ -42,7 +42,7 @@
 						<td></td>
 						<td></td>
 						<td></td>
-						<td>Suma: ${valeOfCart} zł</td>
+						<td><b>Suma: ${valeOfCart} zł</b></td>
 						<td></td>
 					</tr>
 				</tbody>

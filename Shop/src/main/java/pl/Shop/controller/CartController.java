@@ -33,6 +33,10 @@ public class CartController {
 		user = userRepository.findByUserName(authentication.getName());
 		model.addAttribute("productsInCart", user.getCart().getProducts());
 		model.addAttribute("valeOfCart", user.getCart().getValue());
+		if (user.getCart() == null) {
+			user.setCart(new Cart());
+			userRepository.save(user);
+		}
 		return "cart";
 	}
 

@@ -59,7 +59,6 @@ public class UsersController {
 		return "redirect:/users";
 
 	}
-	
 
 	private Boolean success = false;
 
@@ -69,28 +68,23 @@ public class UsersController {
 			model.addAttribute("created", true);
 		}
 		success = false;
-		model.addAttribute("user",userRepository.findByUserName(principal.getName()));
+		model.addAttribute("user", userRepository.findByUserName(principal.getName()));
 		return "myAccount";
 	}
-	
 
 	@RequestMapping(value = "/editaccount", method = RequestMethod.GET)
 	public String editAccount(Model model) {
 
-		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if(!authentication.isAuthenticated())
-		{
+		if (!authentication.isAuthenticated()) {
 			return "login";
-		}
-		else
-		{
+		} else {
 			String currentPrincipalName = authentication.getName();
 			model.addAttribute("principal", userRepository.findByUserName(currentPrincipalName));
 			return "editAccount";
-			
+
 		}
-		}
+	}
 
 	@RequestMapping(value = "/editaccount", method = RequestMethod.POST)
 	public String editAccount(@ModelAttribute("principal") @Valid User principal, BindingResult result, Model model) {
@@ -114,7 +108,6 @@ public class UsersController {
 		}
 
 	}
-	
 
 	@RequestMapping(value = "/editaddress", method = RequestMethod.GET)
 	public String editAddress(Principal principal, Model model) {
@@ -124,19 +117,18 @@ public class UsersController {
 	}
 
 	@RequestMapping(value = "/editaddress", method = RequestMethod.POST)
-	public String editAddress(@ModelAttribute("newAddress") @Valid Address newAddress, BindingResult result, Model model) {
-			success = true;
-			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-			User user = userRepository.findByUserName(authentication.getName());
-			Address address = user.getAddress();
-			address.setCity(newAddress.getCity());
-			address.setNumber(newAddress.getNumber());
-			address.setStreet(newAddress.getStreet());
-			userRepository.save(user);
-			return "redirect:/myaccount";
+	public String editAddress(@ModelAttribute("newAddress") @Valid Address newAddress, BindingResult result,
+			Model model) {
+		success = true;
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		User user = userRepository.findByUserName(authentication.getName());
+		Address address = user.getAddress();
+		address.setCity(newAddress.getCity());
+		address.setNumber(newAddress.getNumber());
+		address.setStreet(newAddress.getStreet());
+		userRepository.save(user);
+		return "redirect:/myaccount";
 
 	}
-	
-	
-	
+
 }

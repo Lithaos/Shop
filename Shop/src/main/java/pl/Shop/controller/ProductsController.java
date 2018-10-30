@@ -1,5 +1,7 @@
 package pl.Shop.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import pl.Shop.model.Cart;
 import pl.Shop.model.Product;
+import pl.Shop.repository.CartRepository;
 import pl.Shop.repository.CategoryRepository;
 import pl.Shop.repository.ProductRepository;
-import pl.Shop.repository.UserRepository;
 
 @Controller
 public class ProductsController {
@@ -26,7 +29,7 @@ public class ProductsController {
 	CategoryRepository categoryRepository;
 
 	@Autowired
-	UserRepository userRepository;
+	CartRepository cartRepository;
 
 	@RequestMapping("/products")
 	public String products(Model model) {
@@ -56,6 +59,12 @@ public class ProductsController {
 	@RequestMapping(value = "/deleteProduct/{productId}", method = RequestMethod.GET)
 	public String deleteProduct(@PathVariable long productId, Model model) {
 		Product memory = productsRepository.getOne(productId);
+
+		List<Cart> carts = cartRepository.findAll();
+
+		for (int i = 0; i < carts.size(); i++) {
+			carts.get(i).getProducts().remove(productsRepository.getOne(productId));
+		}
 
 		productsRepository.delete(memory);
 		return "redirect:/products";

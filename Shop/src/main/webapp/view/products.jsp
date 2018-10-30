@@ -38,10 +38,10 @@
 							<td>${products.getPriceOfProduct()}zł</td>
 							<td>${products.getCategory()}</td>
 							<sec:authorize access="hasAuthority('ADMIN')">
-									<td><form action="/deleteProduct/${products.getId()}">
+								<td><form action="/deleteProduct/${products.getId()}">
 										<input type="submit" class="btn btn-default" value="Usuń" />
 									</form></td>
-									<td><form action="/products/${products.getId()}">
+								<td><form action="/products/${products.getId()}">
 										<input type="submit" class="btn btn-default" value="Edytuj" />
 									</form></td>
 							</sec:authorize>
@@ -50,10 +50,10 @@
 				</tbody>
 			</table>
 			<sec:authorize access="hasAuthority('ADMIN')">
-								<td><form action="/addProduct">
-										<input type="submit" class="btn btn-default" value="Dodaj produkt" />
-									</form></td>
-							</sec:authorize>
+				<td><form action="/addProduct">
+						<input type="submit" class="btn btn-default" value="Dodaj produkt" />
+					</form></td>
+			</sec:authorize>
 		</div>
 	</div>
 </body>

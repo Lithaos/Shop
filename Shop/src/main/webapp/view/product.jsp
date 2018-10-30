@@ -7,7 +7,7 @@
 	<c:if test="${products.getCategory() == category}">
 		<div class="block span3">
 			<div class="product">
-				<img src="${products.getImgLink()}">
+				<img class="imgOfProduct" src="${products.getImgLink()}">
 			</div>
 			<div class="info">
 				<h4>${products.getProductName()}</h4>

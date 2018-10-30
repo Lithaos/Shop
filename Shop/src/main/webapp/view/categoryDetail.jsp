@@ -18,7 +18,7 @@
 			<c:import url="./categoryBar.jsp" />
 		</div>
 		<div class="center">
-					<c:import url="./product.jsp" />
+			<c:import url="./product.jsp" />
 		</div>
 
 	</div>
