@@ -19,7 +19,7 @@
 		<div class="tableofusers">
 
 			<h2 class="text-center">Lista użytkowników:</h2>
-			<table class="table">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -42,11 +42,11 @@
 							</sec:authorize>
 							<sec:authorize access="hasAuthority('ADMIN')">
 								<td><form action="/deleteUser/${user.getId()}">
-										<input type="submit" class="btn btn-default" value="Usuń" />
+										<input type="submit" class="btn btn-danger" value="Usuń" />
 									</form></td>
 								<td>
 									<form action="user/${user.getId()}">
-										<input type="submit" class="btn btn-default" value="Edytuj" />
+										<input type="submit" class="btn btn-info" value="Edytuj" />
 									</form>
 								</td>
 							</sec:authorize>

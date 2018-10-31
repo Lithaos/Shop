@@ -15,8 +15,7 @@
 	<div>
 		<c:import url="./menu.jsp" />
 		<sec:authorize access="isAuthenticated()">
-
-			<table class="table">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -34,7 +33,7 @@
 							<td>${productsInCart.getProductName()}</td>
 							<td>${productsInCart.getPriceOfProduct()}</td>
 							<td><form action="/deleteFromCart/${productsInCart.getId()}">
-									<input type="submit" class="btn btn-default" value="Usuń" />
+									<input type="submit" class="btn btn-danger" value="Usuń" />
 								</form></td>
 						</tr>
 					</c:forEach>

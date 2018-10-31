@@ -19,7 +19,7 @@
 		<div class="tableofusers">
 
 			<h2 class="text-center">Lista kategorii:</h2>
-			<table class="table">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -36,7 +36,7 @@
 							<td>${categories.getDescriptionOfCategory()}</td>
 							<sec:authorize access="hasAuthority('ADMIN')">
 								<td><form action="/deleteCategory/${categories.getId()}">
-										<input type="submit" class="btn btn-default" value="Usuń" />
+										<input type="submit" class="btn btn-danger" value="Usuń" />
 									</form></td>
 							</sec:authorize>
 						</tr>
@@ -45,7 +45,7 @@
 			</table>
 			<sec:authorize access="hasAuthority('ADMIN')">
 				<td><form action="/addCategory">
-						<input type="submit" class="btn btn-default"
+						<input type="submit" class="btn btn-success"
 							value="Dodaj kategorie" />
 					</form></td>
 			</sec:authorize>

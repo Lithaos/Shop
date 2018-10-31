@@ -43,9 +43,11 @@ public class CartController {
 	@RequestMapping(value = "/deleteFromCart/{productsId}", method = RequestMethod.GET)
 	public String removeFromCart(@PathVariable long productsId, Model model) {
 		authentication = SecurityContextHolder.getContext().getAuthentication();
+		Cart cart = user.getCart();
+		cart.setValue(user.getCart().getValue() - productsRepository.getOne(productsId).getPriceOfProduct());
 		user = userRepository.findByUserName(authentication.getName());
 		user.getCart().getProducts().remove(productsRepository.getOne(productsId));
-		user.getCart().setValue(user.getCart().getValue() - productsRepository.getOne(productsId).getPriceOfProduct());
+		user.setCart(cart);
 		userRepository.save(user);
 		return "redirect:/cart";
 	}

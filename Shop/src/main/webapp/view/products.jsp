@@ -19,7 +19,7 @@
 		<div class="tableofusers">
 
 			<h2 class="text-center">Lista produktów:</h2>
-			<table class="table">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -39,10 +39,10 @@
 							<td>${products.getCategory()}</td>
 							<sec:authorize access="hasAuthority('ADMIN')">
 								<td><form action="/deleteProduct/${products.getId()}">
-										<input type="submit" class="btn btn-default" value="Usuń" />
+										<input type="submit" class="btn btn-danger" value="Usuń" />
 									</form></td>
 								<td><form action="/products/${products.getId()}">
-										<input type="submit" class="btn btn-default" value="Edytuj" />
+										<input type="submit" class="btn btn-info" value="Edytuj" />
 									</form></td>
 							</sec:authorize>
 						</tr>
@@ -51,7 +51,7 @@
 			</table>
 			<sec:authorize access="hasAuthority('ADMIN')">
 				<td><form action="/addProduct">
-						<input type="submit" class="btn btn-default" value="Dodaj produkt" />
+						<input type="submit" class="btn btn-success" value="Dodaj produkt" />
 					</form></td>
 			</sec:authorize>
 		</div>

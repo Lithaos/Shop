@@ -63,8 +63,12 @@ public class ProductsController {
 		List<Cart> carts = cartRepository.findAll();
 
 		for (int i = 0; i < carts.size(); i++) {
-			carts.get(i).getProducts().remove(productsRepository.getOne(productId));
-		}
+			if(carts.get(i).getProducts().contains(productsRepository.getOne(productId)));
+			{
+				carts.get(i).getProducts().remove(productsRepository.getOne(productId));
+				carts.get(i).setValue(carts.get(i).getValue()-productsRepository.getOne(productId).getPriceOfProduct());
+			}
+			}
 
 		productsRepository.delete(memory);
 		return "redirect:/products";
