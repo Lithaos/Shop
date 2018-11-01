@@ -16,6 +16,7 @@
 <body>
 	<div>
 		<c:import url="./menu.jsp" />
+		<c:import url="./categoryBar.jsp" />
 		<div class="tableofusers">
 
 			<h2 class="text-center">Lista kategorii:</h2>

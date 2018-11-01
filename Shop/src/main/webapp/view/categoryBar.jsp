@@ -7,7 +7,7 @@
 	<div class="leftBarContent">
 		<p>Kategorie:</p>
 		<ul>
-			<c:forEach var="categories" items="${categories}" varStatus="myIndex">
+			<c:forEach var="categories" items="${AllCategories}" varStatus="myIndex">
 				<li class="categoryItem"><a
 					href="/categories/${categories.getCategoryName()}">${categories.getCategoryName()}</a></li>
 			</c:forEach>

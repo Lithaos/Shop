@@ -15,22 +15,31 @@
 	<div>
 		<c:import url="./menu.jsp" />
 		<sec:authorize access="hasAuthority('ADMIN')">
-			<form:form action="/addCategory" modelAttribute="categories"
-				method="post">
-	Nazwa kategorii: 
-		<form:input path="categoryName" id="categoryName" class="form-control"
-					value=''></form:input>
-				<span><form:errors path="categoryName" cssclass="error" /></span>
-				<br />	
-	Opis kategorii 
-		<form:input path="descriptionOfCategory" id="descriptionOfCategory"
-					class="form-control" value=''></form:input>
-				<br />
-				<input type="submit" class="btn btn-default" value="Zapisz zmiany" />
-			</form:form>
-			<form action="/categories">
-				<input type="submit" class="btn btn-default" value="Wróć" />
-			</form>
+			<div class="form">
+				<form:form action="/addCategory" modelAttribute="categories"
+					method="post">
+
+
+					<div class="form-group">
+						<label for="categoryName">Nazwa kategorii:</label>
+						<form:input path="categoryName" id="categoryName"
+							class="form-control" value=''></form:input>
+					</div>
+
+					<div class="form-group">
+						<label for="descriptionOfCategory">Opis kategorii:</label>
+						<form:textarea path="descriptionOfCategory"
+							id="descriptionOfCategory" class="form-control" value='' />
+					</div>
+
+
+
+					<input type="submit" class="btn btn-default" value="Zapisz zmiany" />
+				</form:form>
+				<form action="/categories">
+					<input type="submit" class="btn btn-default" value="Wróć" />
+				</form>
+			</div>
 		</sec:authorize>
 
 

@@ -1,5 +1,4 @@
 .loginTab {
-	padding-top: 10%;
 	width: 25%;
 	text-align: center;
 }
@@ -114,7 +113,7 @@ ul.topnav li.right a:hover {
 #cart img{
 	height: 30px;
 }
-/*
+
 #cart::after{
 	border-radius: 2em;
     -moz-background-clip: padding-box;
@@ -128,14 +127,13 @@ ul.topnav li.right a:hover {
     position: absolute;
     top: 0.5em;
     left: 2.5em;
-    border: 2px solid #f8f8f8;
     display: block;
     text-align: center;
     min-width: 1.8em;
     background: green;
     font-size: 0.70em;
 }
-*/
+
 .product {
 	display: block;
 	position: relative;

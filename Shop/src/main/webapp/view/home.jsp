@@ -13,6 +13,7 @@
 </head>
 <body>
 	<div>
+		<c:set var="AllCategories" value="${categories}" scope="session" />
 		<c:import url="./menu.jsp" />
 		<c:import url="./categoryBar.jsp" />
 		<div class="text-center center">

@@ -17,18 +17,28 @@
 <body class=text-center>
 	<c:import url="./menu.jsp" />
 	<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
-		<font color="red"> Niepoprawne dane! Spróbuj ponownie!<br /> <br />
-		</font>
+		<h1><font color="red"> Niepoprawne dane! Spróbuj ponownie!<br />
+		</font></h1>
 	</c:if>
+	<h1>Zaloguj się:</h1>
 	<div class="loginTab center-block">
 		<form name='f' action="login" class="" method='POST'>
 			<div class="form-group">
-				<label for="name">Login:</label> <input type="text"
-					class="form-control" name='username' id="name">
+				<div class="input-group">
+					<span class="input-group-addon"><i
+						class="glyphicon glyphicon-user"></i></span> <input id="name" type="text"
+						class="form-control" name="username" placeholder="Login">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"><i
+						class="glyphicon glyphicon-lock"></i></span> <input id="pwd"
+						type="password" class="form-control" name="password"
+						placeholder="Hasło">
+				</div>
+
 				<div class="form-group">
-					<label for="pwd">Password:</label> <input type="password"
-						class="form-control" name='password' id="pwd"> <br> <input
-						name="submit" class="btn btn-default" type="submit" value="submit" />
+					<br> <input
+						name="submit" class="btn btn-default" type="submit" value="Zaloguj" />
 				</div>
 			</div>
 		</form>

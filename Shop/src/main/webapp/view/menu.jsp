@@ -28,7 +28,7 @@
 				<jsp:useBean id="now" class="java.util.Date" /> <fmt:formatDate
 					value="${now}" dateStyle="long" />
 		</span></li>
-		<li class="right "><a id="cart" href="/cart" data-content=""><img
+		<li class="right "><a id="cart" href="/cart" data-content="${cartItems}"><img
 				src=css/cart.png></a></li>
 	</ul>
 </sec:authorize>

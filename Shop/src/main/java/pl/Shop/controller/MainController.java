@@ -31,7 +31,6 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String main(Model model) {
-
 		model.addAttribute("categories", categoryRepository.findAll());
 		return "home";
 	}

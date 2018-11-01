@@ -46,8 +46,8 @@ public class CartController {
 		Cart cart = user.getCart();
 		cart.setValue(user.getCart().getValue() - productsRepository.getOne(productsId).getPriceOfProduct());
 		user = userRepository.findByUserName(authentication.getName());
+		user.getCart().setValue(Math.round(cart.getValue()));
 		user.getCart().getProducts().remove(productsRepository.getOne(productsId));
-		user.setCart(cart);
 		userRepository.save(user);
 		return "redirect:/cart";
 	}
