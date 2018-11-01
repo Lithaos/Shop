@@ -3,6 +3,9 @@ package pl.Shop.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,23 +17,28 @@ import pl.Shop.model.Address;
 import pl.Shop.model.Cart;
 import pl.Shop.model.User;
 import pl.Shop.repository.CategoryRepository;
-import pl.Shop.repository.ProductRepository;
 import pl.Shop.repository.UserRepository;
 
 @Controller
 public class MainController {
 
 	@Autowired
-	ProductRepository pr;
+	private UserRepository userRepository;
 
 	@Autowired
-	UserRepository userRepository;
+	private CategoryRepository categoryRepository;
 
-	@Autowired
-	CategoryRepository categoryRepository;
+	private Authentication authentication;
+	private User user;
 
 	@RequestMapping("/")
 	public String main(Model model) {
+		authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (!(authentication instanceof AnonymousAuthenticationToken)) {
+			user = userRepository.findByUserName(authentication.getName());
+			model.addAttribute("productsInCart", user.getCart().getProducts());
+		}
+
 		model.addAttribute("categories", categoryRepository.findAll());
 		return "home";
 	}

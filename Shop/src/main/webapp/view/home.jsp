@@ -14,6 +14,7 @@
 <body>
 	<div>
 		<c:set var="AllCategories" value="${categories}" scope="session" />
+		<c:set var="cartItems" value="${productsInCart.size()}" scope="session" />
 		<c:import url="./menu.jsp" />
 		<c:import url="./categoryBar.jsp" />
 		<div class="text-center center">

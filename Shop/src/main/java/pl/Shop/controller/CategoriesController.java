@@ -19,12 +19,11 @@ import pl.Shop.repository.ProductRepository;
 public class CategoriesController {
 
 	@Autowired
-	CategoryRepository categoryRepository;
+	private CategoryRepository categoryRepository;
 
 	@Autowired
-	ProductRepository productRepository;
-	
-	
+	private ProductRepository productRepository;
+
 	@RequestMapping("/categories")
 	public String categories(Model model) {
 		model.addAttribute("categories", categoryRepository.findAll());
@@ -57,7 +56,7 @@ public class CategoriesController {
 		return "redirect:/categories";
 
 	}
-	
+
 	@RequestMapping(value = "/categories/{categoryName}", method = RequestMethod.GET)
 	public String productOfCategory(@PathVariable String categoryName, Model model) {
 		model.addAttribute("categories", categoryRepository.findAll());

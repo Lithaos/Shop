@@ -112,26 +112,35 @@ ul.topnav li.right a:hover {
 
 #cart img{
 	height: 30px;
+	
 }
 
-#cart::after{
+#carts{
+	position: relative;
+	top: 15px;
+	
+}
+
+
+#carts::after{
 	border-radius: 2em;
     -moz-background-clip: padding-box;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     font-size: 0.7em;
-    line-height: 1.5;
+    line-height: 1.6;
     font-weight: bold;
+    border: 2px solid white;
     color: #f8f8f8;
     content: attr(data-content);
     position: absolute;
-    top: 0.5em;
+    top: -4em;
     left: 2.5em;
     display: block;
     text-align: center;
     min-width: 1.8em;
     background: green;
-    font-size: 0.70em;
+    font-size: 0.90em;
 }
 
 .product {

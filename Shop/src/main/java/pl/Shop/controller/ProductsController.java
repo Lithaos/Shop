@@ -5,6 +5,9 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,24 +18,38 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import pl.Shop.model.Cart;
 import pl.Shop.model.Product;
+import pl.Shop.model.User;
 import pl.Shop.repository.CartRepository;
 import pl.Shop.repository.CategoryRepository;
 import pl.Shop.repository.ProductRepository;
+import pl.Shop.repository.UserRepository;
 
 @Controller
 public class ProductsController {
 
 	@Autowired
-	ProductRepository productsRepository;
+	private ProductRepository productsRepository;
 
 	@Autowired
-	CategoryRepository categoryRepository;
+	private CategoryRepository categoryRepository;
 
 	@Autowired
-	CartRepository cartRepository;
+	private CartRepository cartRepository;
+
+	@Autowired
+	private UserRepository userRepository;
+
+	private Authentication authentication;
+	private User user;
 
 	@RequestMapping("/products")
 	public String products(Model model) {
+		authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (!(authentication instanceof AnonymousAuthenticationToken)) {
+			user = userRepository.findByUserName(authentication.getName());
+			model.addAttribute("productsInCart", user.getCart().getProducts());
+		}
+
 		model.addAttribute("products", productsRepository.findAll());
 		return "products";
 	}
@@ -63,12 +80,15 @@ public class ProductsController {
 		List<Cart> carts = cartRepository.findAll();
 
 		for (int i = 0; i < carts.size(); i++) {
-			if(carts.get(i).getProducts().contains(productsRepository.getOne(productId)));
+			if (carts.get(i).getProducts().contains(productsRepository.getOne(productId))) {
+				;
+			}
 			{
 				carts.get(i).getProducts().remove(productsRepository.getOne(productId));
-				carts.get(i).setValue(carts.get(i).getValue()-productsRepository.getOne(productId).getPriceOfProduct());
+				carts.get(i)
+						.setValue(carts.get(i).getValue() - productsRepository.getOne(productId).getPriceOfProduct());
 			}
-			}
+		}
 
 		productsRepository.delete(memory);
 		return "redirect:/products";

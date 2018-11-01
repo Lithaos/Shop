@@ -28,8 +28,10 @@
 				<jsp:useBean id="now" class="java.util.Date" /> <fmt:formatDate
 					value="${now}" dateStyle="long" />
 		</span></li>
-		<li class="right "><a id="cart" href="/cart" data-content="${cartItems}"><img
-				src=css/cart.png></a></li>
+		<li class="right "><a id="cart" href="/cart"><img
+				src=css/cart.png></a> <c:if test="${cartItems!=0}">
+				<div id="carts" data-content="${cartItems}"></div>
+			</c:if></li>
 	</ul>
 </sec:authorize>
 <sec:authorize access="!isAuthenticated()">

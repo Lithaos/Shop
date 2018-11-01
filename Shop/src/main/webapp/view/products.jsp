@@ -6,6 +6,8 @@
 
 <html lang="pl">
 <head>
+
+<c:set var="cartItems" value="${productsInCart.size()}" scope="session" />
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <link href="css/style.css" rel="stylesheet">

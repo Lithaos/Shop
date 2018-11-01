@@ -19,10 +19,10 @@ import pl.Shop.repository.UserRepository;
 public class CartController {
 
 	@Autowired
-	ProductRepository productsRepository;
+	private ProductRepository productsRepository;
 
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 
 	private Authentication authentication;
 	private User user;

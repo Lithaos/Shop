@@ -24,7 +24,7 @@ import pl.Shop.repository.UserRepository;
 public class UsersController {
 
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 
 	@RequestMapping("/users")
 	public String users(Model model) {
