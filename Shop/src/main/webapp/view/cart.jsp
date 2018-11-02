@@ -13,11 +13,12 @@
 </head>
 <body>
 	<div>
-		<c:set var="cartItems" value="${productsInCart.size()}" scope="session" />
+		<c:set var="cartItems" value="${productsInCart.size()}"
+			scope="session" />
 		<c:import url="./menu.jsp" />
 		<sec:authorize access="isAuthenticated()">
 			<c:if test="${cartItems!=0}">
-			<div class="row">
+				<div class="row">
 					<div class="col-md-3 col-md-offset-5">
 						<h1>Produkty w koszyku:</h1>
 					</div>
@@ -41,7 +42,7 @@
 										<td><img class="mini"
 											src="${productsInCart.getImgLink()}"></td>
 										<td>${productsInCart.getProductName()}</td>
-										<td>${productsInCart.getPriceOfProduct()} zł</td>
+										<td>${productsInCart.getPriceOfProduct()}zł</td>
 										<td><form
 												action="/deleteFromCart/${productsInCart.getId()}">
 												<input type="submit" class="btn btn-danger" value="Usuń" />
@@ -53,7 +54,10 @@
 									<td></td>
 									<td></td>
 									<td><b>Suma: ${valeOfCart} zł</b></td>
-									<td></td>
+									<td><form
+											action="/order">
+											<input type="submit" class="btn btn-info" value="Złóż zamówienie" />
+										</form></td>
 								</tr>
 							</tbody>
 						</table>

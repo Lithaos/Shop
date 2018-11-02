@@ -3,6 +3,7 @@ package pl.Shop.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,9 @@ public class Cart {
 	@ManyToMany
 	private List<Product> products = new ArrayList<Product>();
 
+	@OneToOne(cascade = CascadeType.ALL)
+	private OrdersHistory orderHistoryId;
+	
 	private double valeOfCart = 0.0;
 
 	public double getValue() {
@@ -58,5 +62,14 @@ public class Cart {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
+
+	public double getValeOfCart() {
+		return valeOfCart;
+	}
+
+	public void setValeOfCart(double valeOfCart) {
+		this.valeOfCart = valeOfCart;
+	}
+	
 
 }
