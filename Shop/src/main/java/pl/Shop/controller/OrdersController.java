@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.Shop.model.Cart;
 import pl.Shop.model.OrdersHistory;
 import pl.Shop.model.User;
-import pl.Shop.repository.CartRepository;
 import pl.Shop.repository.OrdersHistoryRepository;
 import pl.Shop.repository.UserRepository;
 
@@ -25,9 +24,6 @@ public class OrdersController {
 
 	@Autowired
 	private UserRepository userRepository;
-	
-	@Autowired
-	private CartRepository cartRepository;
 
 	@RequestMapping(value = "/order", method = RequestMethod.GET)
 	public String confirmOrder(Model model) {
@@ -39,6 +35,7 @@ public class OrdersController {
 		return "orderConfirm";
 
 	}
+
 	@RequestMapping(value = "/ordered", method = RequestMethod.GET)
 	public String setOrder(Model model) {
 		OrdersHistory newOrder = new OrdersHistory();
@@ -52,6 +49,7 @@ public class OrdersController {
 		newOrder.setValueOfOrder(cart.getValue());
 		user.setCart(new Cart());
 		ordersHistoryRepository.save(newOrder);
+		model.addAttribute("productsInCart", user.getCart().getProducts());
 		return "ordered";
 
 	}
