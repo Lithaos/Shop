@@ -2,7 +2,6 @@ package pl.Shop.model;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -69,10 +68,5 @@ public class OrdersHistory {
 	public void setCartId(Cart cartId) {
 		this.cartId = cartId;
 	}
-
-	
-
-	
-
 
 }

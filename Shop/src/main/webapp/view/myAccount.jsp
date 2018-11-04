@@ -22,6 +22,8 @@
 		value="Zmien dane konta" /></a>
 	<a href="/editaddress"><input type="submit" class="btn btn-default"
 		value="Zmien adres" /> </a>
+		<a href="/history"><input type="submit" class="btn btn-default"
+		value="Historia zamówień" /></a>
 
 	<c:if test="${created}">
 		<h1>Poprawnie zmieniono dane!</h1>

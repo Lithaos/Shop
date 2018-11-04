@@ -17,32 +17,32 @@
 
 		<div class="col-md-10 col-md-offset-1">
 			<h1 class="text-center">Dane do zamówienia</h1>
-			<div class="form-group form">
+			
 				<form:form action="/ordered" modelAttribute="orderDetail"
 					method="post">
 					<div class="form-group">
-						<label class="control-label col-sm-4" for="street">Ulica:</label>
-						<div class="col-sm-8">
+						<label class="control-label col-sm-3" for="street">Ulica:</label>
+						<div class="col-sm-7">
 							<form:input path="street" id="street" class="form-control"></form:input>
 						</div>
 					</div>
-
+					<br>
 					<div class="form-group">
-						<label class="control-label col-sm-4" for="number">Numer
+						<label class="control-label col-sm-3" for="number">Numer
 							domu:</label>
-						<div class="col-sm-8">
+						<div class="col-sm-7">
 							<form:input path="number" id="number" class="form-control"></form:input>
 						</div>
 					</div>
-
+					<br>
 					<div class="form-group">
-						<label class="control-label col-sm-4" for="city">Miasto:</label>
-						<div class="col-sm-8">
+						<label class="control-label col-sm-3" for="city">Miasto:</label>
+						<div class="col-sm-7">
 							<form:input path="city" id="city" class="form-control"></form:input>
 						</div>
 					</div>
 				</form:form>
-			</div>
+			
 			<br>
 			<h1 class="text-center">List produktów</h1>
 
