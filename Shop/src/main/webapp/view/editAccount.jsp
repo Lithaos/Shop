@@ -30,5 +30,6 @@
 			<h1>Poprawnie zmieniono dane!</h1>
 		</c:if>
 	</div>
+	<c:import url="./footer.jsp" />
 </body>
 </html>

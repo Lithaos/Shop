@@ -37,7 +37,7 @@
 			</form>
 		</sec:authorize>
 		<sec:authorize access="hasAuthority('ADMIN')">
-			<form:form action="/products/${productId}"
+			<form:form action="/productedit/${productId}"
 				modelAttribute="productDetail" method="post">
 	Nazwa: 
 		<form:input path="productName" id="productName" class="form-control"
@@ -68,12 +68,13 @@
 
 				<input type="submit" class="btn btn-default" value="Zapisz zmiany" />
 			</form:form>
-			<form action="/users">
+			<form action="/products">
 				<input type="submit" class="btn btn-default" value="Wróć" />
 			</form>
 		</sec:authorize>
 
 
 	</div>
+	<c:import url="./footer.jsp" />
 </body>
 </html>

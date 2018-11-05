@@ -28,5 +28,6 @@
 	<c:if test="${created}">
 		<h1>Poprawnie zmieniono dane!</h1>
 	</c:if>
+	<c:import url="./footer.jsp" />
 </body>
 </html>

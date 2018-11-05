@@ -95,16 +95,16 @@ public class ProductsController {
 
 	}
 
-	@RequestMapping(value = "/products/{productId}")
-	public String productDetail(@PathVariable long productId, Model model) {
+	@RequestMapping(value = "/productedit/{productId}")
+	public String editProduct(@PathVariable long productId, Model model) {
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("productDetail", productsRepository.getOne(productId));
 		model.addAttribute("productId", productId);
 		return "productDetail";
 	}
 
-	@RequestMapping(value = "/products/{productId}", method = RequestMethod.POST)
-	public String EditProduct(@PathVariable long productId, @ModelAttribute("product") Product product, Model model) {
+	@RequestMapping(value = "/productedit/{productId}", method = RequestMethod.POST)
+	public String editProduct(@PathVariable long productId, @ModelAttribute("product") Product product, Model model) {
 		Product memory = productsRepository.getOne(productId);
 		memory.setProductName(product.getProductName());
 		memory.setDescriptionOfProduct(product.getDescriptionOfProduct());
@@ -113,7 +113,13 @@ public class ProductsController {
 		memory.setCategory(product.getCategory());
 		productsRepository.save(memory);
 		return "redirect:/products";
-
+	}
+	
+	@RequestMapping(value = "/products/{productId}")
+	public String productDetail(@PathVariable long productId, Model model) {
+		model.addAttribute("productDetail", productsRepository.getOne(productId));
+		model.addAttribute("productId", productId);
+		return "viewProduct";
 	}
 
 }

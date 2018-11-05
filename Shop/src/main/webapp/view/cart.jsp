@@ -18,49 +18,76 @@
 		<c:import url="./menu.jsp" />
 		<sec:authorize access="isAuthenticated()">
 			<c:if test="${cartItems!=0}">
-				<div class="row">
-					<div class="col-md-3 col-md-offset-5">
-						<h1>Produkty w koszyku:</h1>
-					</div>
+
+				<div class="col-md-3 col-md-offset-5">
+					<h1>Produkty w koszyku:</h1>
 				</div>
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<table class="table table-striped">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Img</th>
-									<th scope="col">Nazwa produktu:</th>
-									<th scope="col">Cena</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="productsInCart" items="${productsInCart}"
-									varStatus="myIndex">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-md-10 col-md-offset-1">
+							<table class="table table-hover">
+								<thead>
 									<tr>
-										<td>${myIndex.index+1}</td>
-										<td><img class="mini"
-											src="${productsInCart.getImgLink()}"></td>
-										<td>${productsInCart.getProductName()}</td>
-										<td>${productsInCart.getPriceOfProduct()}zł</td>
-										<td><form
-												action="/deleteFromCart/${productsInCart.getId()}">
-												<input type="submit" class="btn btn-danger" value="Usuń" />
-											</form></td>
+										<th>Produkt</th>
+										<th></th>
+										<th class="text-center"></th>
+										<th class="text-center">Łącznie</th>
+										<th> </th>
 									</tr>
-								</c:forEach>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td><b>Suma: ${valeOfCart} zł</b></td>
-									<td><form
-											action="/order">
-											<input type="submit" class="btn btn-info" value="Złóż zamówienie" />
-										</form></td>
-								</tr>
-							</tbody>
-						</table>
+								</thead>
+								<tbody>
+									<c:forEach var="productsInCart" items="${productsInCart}"
+										varStatus="myIndex">
+										<tr>
+											<td class="col-sm-8 col-md-6">
+												<div class="media">
+													<a class="thumbnail pull-left" href="#"> <img
+														class="media-object" src="${productsInCart.getImgLink()}"
+														style="width: 72px; height: 72px;">
+													</a>
+													<div class="media-body">
+														<h4 class="media-heading">
+															<a href="#">${productsInCart.getProductName()}</a>
+														</h4>
+													</div>
+												</div>
+											</td>
+											<td class="col-sm-1 col-md-1" style="text-align: center">
+												
+											</td>
+											<td class="col-sm-1 col-md-1 text-center"><strong></strong></td>
+											<td class="col-sm-1 col-md-1 text-center"><strong> ${productsInCart.getPriceOfProduct()}zł</strong></td>
+											<td class="col-sm-2 col-md-2">
+												<form action="/deleteFromCart/${productsInCart.getId()}">
+													<input type="submit" class="btn btn-danger" value="Usuń" />
+												</form>
+											</td>
+										</tr>
+									</c:forEach>
+									<tr>
+										<td> </td>
+										<td> </td>
+										<td><h3>Suma:</h3> </td>
+										<td class="text-right"><h3>
+												<strong>${valeOfCart}zł</strong>
+											</h3></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td> </td>
+										<td> </td>
+										<td> </td>
+										<td></td>
+										<td>
+											<form action="/order">
+												<input type="submit" class="btn btn-info"
+													value="Złóż zamówienie" />
+											</form>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</c:if>
@@ -75,7 +102,7 @@
 
 			</c:if>
 		</sec:authorize>
-
 	</div>
+	<c:import url="./footer.jsp" />
 </body>
 </html>

@@ -27,5 +27,6 @@
 			<input type="submit" class="btn btn-default" value="Zapisz zmiany" />
 		</form:form>
 	</div>
+	<c:import url="./footer.jsp" />
 </body>
 </html>

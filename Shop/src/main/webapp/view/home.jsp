@@ -14,14 +14,15 @@
 <body>
 	<div>
 		<c:set var="AllCategories" value="${categories}" scope="session" />
-		<c:set var="cartItems" value="${productsInCart.size()}" scope="session" />
+		<c:set var="cartItems" value="${productsInCart.size()}"
+			scope="session" />
 		<c:import url="./menu.jsp" />
 		<c:import url="./categoryBar.jsp" />
 		<div class="text-center center">
 			<h1>Witaj na moim sklepie!</h1>
 			<h2>Zarejestruj się by zyskać dostęp do systemu!</h2>
 			<h3>
-			
+
 				<a href="/register"> Wypełnij fomularz!</a>
 			</h3>
 			<h2>
@@ -29,6 +30,8 @@
 			</h2>
 		</div>
 	</div>
-
+	
+		<c:import url="./footer.jsp" />
+	
 </body>
 </html>

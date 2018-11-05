@@ -6,11 +6,14 @@
 <c:forEach var="products" items="${products}" varStatus="myIndex">
 	<c:if test="${products.getCategory() == category}">
 		<div class="block span3">
+			<a href="/products/${products.getId()}"></a>
 			<div class="product">
-				<img class="imgOfProduct img-rounded" src="${products.getImgLink()}">
+				<a href="/products/${products.getId()}"> <img
+					class="imgOfProduct img-rounded" src="${products.getImgLink()}">
+				</a>
 			</div>
 			<div class="info">
-				<h4>${products.getProductName()}</h4>
+				<h4><a href="/products/${products.getId()}">${products.getProductName()}</a></h4>
 				<span class="description">
 					${products.getDescriptionOfProduct()} </span> <span class="price">${products.getPriceOfProduct()}
 					zł</span>

@@ -25,7 +25,7 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th scope="col">#</th>
+						<th scope="col">Img</th>
 						<th scope="col">Nazwa</th>
 						<th scope="col">Opis</th>
 						<th scope="col">Cena</th>
@@ -35,16 +35,16 @@
 				<tbody>
 					<c:forEach var="products" items="${products}" varStatus="myIndex">
 						<tr>
-							<th scope="row">${myIndex.index+1}</th>
-							<td>${products.getProductName()}</td>
-							<td>${products.getDescriptionOfProduct()}</td>
+							<td><img class="mini" src="${products.getImgLink()}"></td>
+							<td><a href="/products/${products.getId()}">${products.getProductName()}</a></td>
+							<td><a href="/products/${products.getId()}">${products.getDescriptionOfProduct()}</a></td>
 							<td>${products.getPriceOfProduct()}zł</td>
 							<td>${products.getCategory()}</td>
 							<sec:authorize access="hasAuthority('ADMIN')">
 								<td><form action="/deleteProduct/${products.getId()}">
 										<input type="submit" class="btn btn-danger" value="Usuń" />
 									</form></td>
-								<td><form action="/products/${products.getId()}">
+								<td><form action="/productedit/${products.getId()}">
 										<input type="submit" class="btn btn-info" value="Edytuj" />
 									</form></td>
 							</sec:authorize>
@@ -59,5 +59,6 @@
 			</sec:authorize>
 		</div>
 	</div>
+	<c:import url="./footer.jsp" />
 </body>
 </html>

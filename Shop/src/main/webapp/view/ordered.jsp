@@ -19,5 +19,6 @@
 		<c:set var="cartItems" value="${productsInCart.size()}" 			scope="session" />
 		<c:import url="./menu.jsp" />
 		<h1>Dziękujemy za złożenie zamówienia!</h1>
+		<c:import url="./footer.jsp" />
 </body>
 </html>
