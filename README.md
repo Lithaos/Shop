@@ -1,2 +1,2 @@
 # Shop
-Project
+Project online store
