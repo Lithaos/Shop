@@ -238,16 +238,13 @@ ul.topnav li.right a:hover {
 .imgOfProduct {
 	max-height: 350px;
 }
-footer {
-  position: absolute;
+
+.footer{
+	 position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #5B5D74;
+  background-color: #efefef;
   text-align: center;
-}
-#footer:hover{
-	background-color: inherit;
-	color: green;
 }
