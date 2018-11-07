@@ -1,52 +1,127 @@
+<!-- Footer -->
+<footer class="page-footer font-small lighten-3 pt-4 footer">
 
-<footer>
-	<section id="footer">
-		<div class="container">
-			<div class="row text-center text-xs-center text-sm-left text-md-left">
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Nawigacja</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i
-								class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="javascript:void();"><i
-								class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="javascript:void();"><i
-								class="fa fa-angle-double-right"></i>FAQ</a></li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Pomoc</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i
-								class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="javascript:void();"><i
-								class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="javascript:void();"><i
-								class="fa fa-angle-double-right"></i>FAQ</a></li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Social media:</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i
-								class="fa fa-facebook"></i>Facebook</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-twitter"></i>Twitter</a></li>
-						<li><a href="javascript:void();"><i
-								class="fa fa-google-plus"></i>Google</a></li>
-					</ul>
-				</div>
-			</div>
+	<!-- Footer Links -->
+	<div class="container text-center text-md-left">
 
-			<div class="row">
-				<div
-					class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p >
-						&copy; All right Reversed.<a class="text-green ml-2"
-							href="#" target="_blank">Lithaos</a>
-					</p>
-				</div>
-				<hr>
+		<!-- Grid row -->
+		<div class="row">
+
+			<!-- Grid column -->
+			<div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+				<!-- Content -->
+				<h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
+				<p>Some text.</p>
+				<p>Some text.</p>
+
 			</div>
+			<!-- Grid column -->
+
+
+			<!-- Grid column -->
+			<div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+				<!-- Links -->
+				<h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+
+				<ul class="list-unstyled">
+					<li>
+						<p>
+							<a href="#!">PROJECTS</a>
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="#!">ABOUT US</a>
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="#!">BLOG</a>
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="#!">AWARDS</a>
+						</p>
+					</li>
+				</ul>
+
+			</div>
+			<!-- Grid column -->
+
+
+
+			<!-- Grid column -->
+			<div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+				<!-- Contact details -->
+				<h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+
+				<ul class="list-unstyled">
+					<li>
+						<p>
+							<i class="fa fa-home mr-3"></i> New York, NY 10012, US
+						</p>
+					</li>
+					<li>
+						<p>
+							<i class="fa fa-envelope mr-3"></i> info@example.com
+						</p>
+					</li>
+					<li>
+						<p>
+							<i class="fa fa-phone mr-3"></i> + 01 234 567 88
+						</p>
+					</li>
+					<li>
+						<p>
+							<i class="fa fa-print mr-3"></i> + 01 234 567 89
+						</p>
+					</li>
+				</ul>
+
+			</div>
+			<!-- Grid column -->
+
+			<!-- Grid column -->
+			<div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+				<!-- Social buttons -->
+				<h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
+				<!-- Facebook -->
+				<a type="button" class="btn-floating btn-fb"> <i
+					class="fa fa-facebook"></i>
+				</a>
+				<!-- Twitter -->
+				<a type="button" class="btn-floating btn-tw"> <i
+					class="fa fa-twitter"></i>
+				</a>
+				<!-- Google +-->
+				<a type="button" class="btn-floating btn-gplus"> <i
+					class="fa fa-google-plus"></i>
+				</a>
+				<!-- Dribbble -->
+				<a type="button" class="btn-floating btn-dribbble"> <i
+					class="fa fa-dribbble"></i>
+				</a>
+
+			</div>
+			<!-- Grid column -->
+
 		</div>
-	</section>
+		<!-- Grid row -->
+
+	</div>
+	<!-- Footer Links -->
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3">
+		© 2018 Copyright: <a href="#">Lithaos</a>
+	</div>
+	<!-- Copyright -->
+
 </footer>
+<!-- Footer -->
