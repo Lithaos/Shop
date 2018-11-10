@@ -2,24 +2,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="AllCategories" value="${categories}" scope="session" />
+<c:set var="cartItems" value="${productsInCart.size()}" scope="session" />
 
-
-<html lang="pl">
-<head>
-<link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-</head>
-<body>
-	<div>
-		<c:set var="AllCategories" value="${categories}" scope="session" />
-		<c:set var="cartItems" value="${productsInCart.size()}"
-			scope="session" />
-		<c:import url="./menu.jsp" />
-		<c:import url="./categoryBar.jsp" />
-		<div class="text-center center">
-			<h1>Witaj na moim sklepie!</h1>
+<c:import url="./menu.jsp" />
+<div class="content">
+	<div class="row">
+		<div class="col-2">
+			<c:import url="./categoryBar.jsp" />
+		</div>
+		<div class="col-10 text-center">
+			<h1 >Witaj na moim sklepie!</h1>
 			<h2>Zarejestruj się by zyskać dostęp do systemu!</h2>
 			<h3>
 
@@ -29,9 +22,10 @@
 				Jeśli masz konto, przejdz do<a href="/login"> logowania!</a>
 			</h2>
 		</div>
+
+
 	</div>
-	
-		<c:import url="./footer.jsp" />
-	
-</body>
-</html>
+</div>
+<c:import url="./footer.jsp" />
+
+

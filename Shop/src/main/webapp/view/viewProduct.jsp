@@ -5,38 +5,19 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<html lang="pl">
-<head>
-<base href="/">
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<link href="css/product.css" rel="stylesheet">
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>${productDetail.getProductName()}</title>
-<link
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
-	rel="stylesheet">
-</head>
-<body>
-
-	<c:import url="./menu.jsp" />
-
-	<c:import url="./categoryBar.jsp" />
+<c:import url="./menu.jsp" />
+<div class="row">
+	<div class="col-2">
+		<c:import url="./categoryBar.jsp" />
+	</div>
 	<div class="container">
-		<div class="card">
+		<div class="col-10 card">
 			<div class="container-fliud">
 				<div class="wrapper row">
-					<div class="main" id="pic-1">
+					<div class="main col-md-7" id="pic-1">
 						<img src="${productDetail.getImgLink()}" />
 					</div>
-					<div class="details col-md-6">
+					<div class="details col-md-5">
 						<h3 class="product-title">${productDetail.getProductName()}</h3>
 						<div class="rating">
 							<div class="stars">
@@ -62,6 +43,4 @@
 			</div>
 		</div>
 	</div>
-	<c:import url="./footer.jsp" />
-</body>
-</html>
+</div>

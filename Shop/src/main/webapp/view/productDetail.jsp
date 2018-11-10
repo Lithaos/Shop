@@ -5,76 +5,53 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<html lang="pl">
-<head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-</head>
-<body>
-	<div>
-		<c:import url="./menu.jsp" />
-		<sec:authorize access="hasAuthority('USER')">
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">Nick</th>
-						<th scope="col">Email</th>
-						<th scope="col">Role</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>${productDetail.getProductName()}</td>
-						<td>${productDetail.getDescriptionOfProduct()}</td>
-						<td>${productDetail.getPriceOfProduct()}</td>
-					</tr>
 
-				</tbody>
-			</table>
-			<form action="/users">
-				<input type="submit" class="btn btn-default" value="Wróć" />
-			</form>
-		</sec:authorize>
-		<sec:authorize access="hasAuthority('ADMIN')">
+<c:import url="./menu.jsp" />
+<div class="container">
+
+	<sec:authorize access="hasAuthority('ADMIN')">
+		<div class="row">
 			<form:form action="/productedit/${productId}"
 				modelAttribute="productDetail" method="post">
-	Nazwa: 
-		<form:input path="productName" id="productName" class="form-control"
-					value=''></form:input>
-				<br />	
-	Opis: 
-		<form:input path="descriptionOfProduct" id="descriptionOfProduct"
-					class="form-control" value=''></form:input>
-				<br />	
-	Cena: 
-		<form:input path="priceOfProduct" id="priceOfProduct"
-					class="form-control" value=''></form:input>
-				<br />
-				
-	Link do zdjęcia: 
-		<form:input path="imgLink" id="imgLink" class="form-control" value=''></form:input>
-				<br />
-	Kategoria: 
-	
-	<form:select path="category" id="category">
-					<c:forEach var="categories" items="${categories}"
-						varStatus="myIndex">
-						<option value='${categories.getCategoryName()}'>${categories.getCategoryName()}</option>
-					</c:forEach>
-				</form:select>
-				<br />
-				<br />
-
+				<div class="form-group">
+					<label for="productName">Nazwa:</label>
+					<form:input path="productName" id="productName"
+						class="form-control" value=''></form:input>
+				</div>
+				<div class="form-group">
+					<label for="descriptionOfProduct">Opis:</label>
+					<form:input path="descriptionOfProduct" id="descriptionOfProduct"
+						class="form-control" value=''></form:input>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Cena:</label>
+					<form:input path="priceOfProduct" id="priceOfProduct"
+						class="form-control" value=''></form:input>
+				</div>
+				<div class="form-group">
+					<label for="imgLink">Link do zdjęcia:</label>
+					<form:input path="imgLink" id="imgLink" class="form-control"
+						value=''></form:input>
+				</div>
+				<div class="form-group">
+					<label for="category">Kategoria:</label>
+					<form:select path="category" id="category">
+						<c:forEach var="categories" items="${categories}"
+							varStatus="myIndex">
+							<option value='${categories.getCategoryName()}'>${categories.getCategoryName()}</option>
+						</c:forEach>
+					</form:select>
+				</div>
 				<input type="submit" class="btn btn-default" value="Zapisz zmiany" />
 			</form:form>
-			<form action="/products">
-				<input type="submit" class="btn btn-default" value="Wróć" />
-			</form>
-		</sec:authorize>
+			<br>
 
 
-	</div>
-	<c:import url="./footer.jsp" />
-</body>
-</html>
+		</div>
+
+		<form action="/products">
+			<input type="submit" class="btn btn-default" value="Wróć" />
+		</form>
+	</sec:authorize>
+</div>
+

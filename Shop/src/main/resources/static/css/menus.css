@@ -1,0 +1,80 @@
+/* Top bar */
+
+.loginTab {
+	width: 25%;
+	margin: auto;
+}
+
+ul.topnav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #5B5D74;
+}
+
+ul.topnav li {
+	float: left;
+}
+
+ul.topnav li span {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+ul.topnav li a {
+	display: block;
+	color: white;
+	font-size: 120%;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+ul.topnav li a.active {
+	background-color: #4CAF50;
+}
+
+ul.topnav li.right {
+	float: right;
+}
+
+ul.topnav li.right a:hover {
+	color: red;
+}
+
+@media screen and (max-width: 600px) {
+	ul.topnav li.right, ul.topnav li {
+		float: none;
+	}
+}
+
+
+/* Left bar */
+
+.leftbar {
+	background-color: #5B5D74;
+	color: white;
+	min-height: 30vh;
+}
+
+.leftBarContent {
+	padding: 10%;
+}
+
+.categoryItem {
+	margin-bottom: 10px;
+}
+
+.categoryItem a {
+	color: white;
+	text-decoration: none;
+}
+
+.categoryItem a:hover {
+	color: red;
+	text-decoration: none;
+}

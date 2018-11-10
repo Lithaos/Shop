@@ -1,13 +1,19 @@
- </body>
 <footer class="page-footer font-small lighten-3 pt-4 footer">
+
 	<div class="container text-center text-md-left">
+
 		<div class="row">
+
 			<div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
 				<h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
 				<p>Some text.</p>
 				<p>Some text.</p>
+
 			</div>
+
 			<div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
 				<h5 class="font-weight-bold text-uppercase mb-4">About</h5>
 
 				<ul class="list-unstyled">
@@ -36,6 +42,7 @@
 			</div>
 
 			<div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
 				<h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
 
 				<ul class="list-unstyled">
@@ -62,24 +69,25 @@
 				</ul>
 
 			</div>
+
 			<div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
 				<h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
 				<a type="button" class="btn-floating btn-fb"> <i
 					class="fa fa-facebook"></i>
-				</a>
-				<a type="button" class="btn-floating btn-tw"> <i
+				</a> <a type="button" class="btn-floating btn-tw"> <i
 					class="fa fa-twitter"></i>
-				</a>
-				<a type="button" class="btn-floating btn-gplus"> <i
+				</a> <a type="button" class="btn-floating btn-gplus"> <i
 					class="fa fa-google-plus"></i>
-				</a>
-				<a type="button" class="btn-floating btn-dribbble"> <i
+				</a> <a type="button" class="btn-floating btn-dribbble"> <i
 					class="fa fa-dribbble"></i>
 				</a>
 
 			</div>
 
 		</div>
+
 	</div>
 
 	<div class="footer-copyright text-center py-3">
@@ -87,4 +95,3 @@
 	</div>
 
 </footer>
-

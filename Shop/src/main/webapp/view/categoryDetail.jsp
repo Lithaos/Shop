@@ -5,23 +5,14 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<html lang="pl">
-<head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-</head>
-<body>
-	<div>
-		<c:import url="./menu.jsp" />
-		<div class="leftBar">
-			<c:import url="./categoryBar.jsp" />
-		</div>
-		<div class="center">
-			<c:import url="./product.jsp" />
-		</div>
 
+
+<c:import url="./menu.jsp" />
+<div class="row">
+	<div class="col-2">
+		<c:import url="./categoryBar.jsp" />
 	</div>
-	<c:import url="./footer.jsp" />
-</body>
-</html>
+	<div class="col-10">
+		<c:import url="./product.jsp" />
+	</div>
+</div>
