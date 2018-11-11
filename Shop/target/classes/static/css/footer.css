@@ -6,8 +6,8 @@ section .section-title {
 	text-transform: uppercase;
 }
 
-#footer {
-	background: #5B5D74 !important;
+footer {
+	background: #eceff0 !important;
 }
 
 #footer h5 {

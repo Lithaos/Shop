@@ -6,6 +6,7 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <c:import url="./menu.jsp" />
+
 <div class="row">
 	<div class="col-2">
 		<c:import url="./categoryBar.jsp" />
@@ -19,14 +20,9 @@
 					</div>
 					<div class="details col-md-5">
 						<h3 class="product-title">${productDetail.getProductName()}</h3>
-						<div class="rating">
-							<div class="stars">
-								<span class="fa fa-star checked"></span> <span
-									class="fa fa-star checked"></span> <span
-									class="fa fa-star checked"></span> <span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							</div>
-							<span class="review-no">41 ocen</span>
+						<div class="lead">
+							<div id="stars" class="starrr"></div>
+							Dałeś <span id="count">0</span> gwiazdek
 						</div>
 						<p class="product-description">${productDetail.getDescriptionOfProduct()}</p>
 						<h4 class="price">

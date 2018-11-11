@@ -3,6 +3,7 @@ package pl.Shop.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -17,6 +18,7 @@ public class Product {
 	@NotEmpty(message = "Musisz podać nazwę!")
 	private String productName;
 
+	@Lob
 	private String descriptionOfProduct;
 
 	@NotNull(message = "Musisz podać cenę!")

@@ -58,8 +58,13 @@ ul.topnav li.right a:hover {
 .leftbar {
 	background-color: #5B5D74;
 	color: white;
-	min-height: 30vh;
+	min-height: 80vh;
+	height:100%;
 }
+.leftbar li {
+	list-style: none;
+}
+
 
 .leftBarContent {
 	padding: 10%;

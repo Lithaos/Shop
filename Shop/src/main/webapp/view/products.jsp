@@ -14,7 +14,7 @@
 		<c:import url="./categoryBar.jsp" />
 	</div>
 	<div class="col-10 tableofusers">
-		<div class="container">
+		<div class="">
 			<h2 class="text-center">Lista produktów:</h2>
 			<table class="table table-striped">
 				<thead>

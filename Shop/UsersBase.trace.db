@@ -407,3 +407,23 @@ alter table cart add constraint FKjjrx9ii9py64ei7wh0e4mb8mk foreign key (cache_m
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1277)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1265)
 	at pl.Shop.ShopApplication.main(ShopApplication.java:19)
+2018-11-11 16:23:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Wartość za długa dla kolumny "DESCRIPTION_OF_PRODUCT VARCHAR(255)": "STRINGDECODE('Je\u015bli nie przepadasz za eleganckimi storami i chcesz w troch\u0119 humorystyczny spos\u00f3b podej\u015b\u010... (258)"
+Value too long for column "DESCRIPTION_OF_PRODUCT VARCHAR(255)": "STRINGDECODE('Je\u015bli nie przepadasz za eleganckimi storami i chcesz w troch\u0119 humorystyczny spos\u00f3b podej\u015b\u010... (258)"; SQL statement:
+insert into product (category, description_of_product, img_link, price_of_product, product_name, id) values (?, ?, ?, ?, ?, ?) [22001-197]
+2018-11-11 16:26:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Wartość za długa dla kolumny "DESCRIPTION_OF_PRODUCT VARCHAR(255)": "STRINGDECODE('Je\u015bli nie przepadasz za eleganckimi storami i chcesz w troch\u0119 humorystyczny spos\u00f3b podej\u015b\u010... (437)"
+Value too long for column "DESCRIPTION_OF_PRODUCT VARCHAR(255)": "STRINGDECODE('Je\u015bli nie przepadasz za eleganckimi storami i chcesz w troch\u0119 humorystyczny spos\u00f3b podej\u015b\u010... (437)"; SQL statement:
+insert into product (category, description_of_product, img_link, price_of_product, product_name, id) values (?, ?, ?, ?, ?, ?) [22001-197]
+2018-11-11 16:27:19 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Błąd składniowy w wyrażeniu SQL "DROP COLUMN[*] "; oczekiwano "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"
+Syntax error in SQL statement "DROP COLUMN[*] "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+Drop Column [42001-197]
+2018-11-11 16:27:39 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Błąd składniowy w wyrażeniu SQL "DROP COLUMN[*] DESCRIPTION_OF_PRODUCT "; oczekiwano "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"
+Syntax error in SQL statement "DROP COLUMN[*] DESCRIPTION_OF_PRODUCT "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+Drop Column DESCRIPTION_OF_PRODUCT [42001-197]
+2018-11-11 16:50:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Wartość za długa dla kolumny "IMG_LINK VARCHAR(255)": "STRINGDECODE('XGame X7-500MP to podk\u0142adka pod mysz komputerow\u0105 marki A4Tech. Charakteryzuje si\u0119 du\u017c\u0105 po... (371)"
+Value too long for column "IMG_LINK VARCHAR(255)": "STRINGDECODE('XGame X7-500MP to podk\u0142adka pod mysz komputerow\u0105 marki A4Tech. Charakteryzuje si\u0119 du\u017c\u0105 po... (371)"; SQL statement:
+insert into product (category, description_of_product, img_link, price_of_product, product_name, id) values (?, ?, ?, ?, ?, ?) [22001-197]

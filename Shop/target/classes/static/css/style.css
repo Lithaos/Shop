@@ -1,6 +1,9 @@
 @import url("menus.css");
 @import url("product.css");
 @import url("footer.css");
+.carousel{
+	padding-bottom: 4%;
+}
 
 .content{
 	min-height: 70vh;
@@ -24,7 +27,10 @@
 .tableofusers h2 {
 	padding-bottom: 3%;
 }
-
+.col-10,.col-2
+{
+	padding: 0;
+}
 
 .center {
 	float: right;
@@ -65,4 +71,9 @@
 	min-width: 1.8em;
 	background: green;
 	font-size: 0.90em;
+}
+
+footer .btn-floating i {
+	font-size: 32px;
+	padding: 10px;
 }
