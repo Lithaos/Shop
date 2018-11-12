@@ -1,8 +1,27 @@
 /* Top bar */
-
 .loginTab {
 	width: 25%;
 	margin: auto;
+}
+
+.topnav input[type=text] {
+	float: right;
+	padding: 6px;
+	border: none;
+	margin-top: 8px;
+
+	font-size: 17px;
+}
+
+.topnav .search-container button {
+	float: right;
+	padding: 6px 10px;
+	margin-top: 8px;
+	margin-right: 16px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
 }
 
 ul.topnav {
@@ -52,19 +71,17 @@ ul.topnav li.right a:hover {
 	}
 }
 
-
 /* Left bar */
-
 .leftbar {
 	background-color: #5B5D74;
 	color: white;
 	min-height: 80vh;
-	height:100%;
+	height: 100%;
 }
+
 .leftbar li {
 	list-style: none;
 }
-
 
 .leftBarContent {
 	padding: 10%;

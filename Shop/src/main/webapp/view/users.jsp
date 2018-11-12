@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -7,6 +8,7 @@
 
 
 <c:import url="./menu.jsp" />
+
 <div class="row">
 	<div class="col-2">
 		<c:import url="./categoryBar.jsp" />

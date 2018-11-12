@@ -1,5 +1,6 @@
 package pl.Shop.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.Shop.model.Cart;
 import pl.Shop.model.Product;
@@ -114,12 +116,27 @@ public class ProductsController {
 		productsRepository.save(memory);
 		return "redirect:/products";
 	}
-	
+
 	@RequestMapping(value = "/products/{productId}")
 	public String productDetail(@PathVariable long productId, Model model) {
 		model.addAttribute("productDetail", productsRepository.getOne(productId));
 		model.addAttribute("productId", productId);
 		return "viewProduct";
+	}
+
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	public String search(@RequestParam("search") CharSequence search, Model model) {
+
+		List<Product> allProducts = productsRepository.findAll();
+		List<Product> products = new ArrayList<Product>();
+		for (Product product : allProducts) {
+			search.toString().toLowerCase().toCharArray();
+			if (product.getProductName().toLowerCase().contains(search)) {
+				products.add(product);
+			}
+		}
+		model.addAttribute("products", products);
+		return "search";
 	}
 
 }
