@@ -12,7 +12,7 @@
 	<div class="col-2">
 		<c:import url="./categoryBar.jsp" />
 	</div>
-	<div class="col-10 text-center">
+	<div class="col-10 text-center main-content">
 
 		<div id="carousel" class="carousel slide" data-ride="carousel">
 

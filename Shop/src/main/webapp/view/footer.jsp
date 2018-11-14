@@ -1,48 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 </body>
-<footer>
-     <div class="container-fluid bg-primary py-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7">
-            <div class="row py-0">
-          <div class="col-sm-1 hidden-md-down">
-              <a class="bg-circle bg-info" href="#">
-                <i class="fa fa-2x fa-fw fa-address-card" aria-hidden="true "></i>
-              </a>
-            </div>
-            <div class="col-sm-11 text-white">
-                <div><h4>  Kontakt</h4>
-                    <p>  Example@gmail.com</p>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="col-md-5">
-          <div class="d-inline-block">
-            <div class="bg-circle-outline d-inline-block" style="background-color:#3b5998">
-              <a href="https://www.facebook.com/"><i class="fa fa-2x fa-fw fa-facebook text-white"></i>
-		</a>
-            </div>
-            <div class="bg-circle-outline d-inline-block" style="background-color:#4099FF">
-              <a href="https://twitter.com/">
-                <i class="fa fa-2x fa-fw fa-twitter text-white"></i></a>
-            </div>
+<footer class="page-footer font-small lighten-3 footer">
+	<br>
+	<div class="row">
+		<div class="col-xs-10 col-sm-10 col-md-10 offset-md-2 ">
+			<ul class="list-unstyled list-inline text-center">
+				<li class="list-inline-item"><a href="/login">Logowanie</a></li>
+				<li class="list-inline-item"><a href="/categories">Kategorie</a></li>
+				<li class="list-inline-item"><a href="/products">Produkty</a></li>
+			</ul>
+		</div>
 
-            <div class="bg-circle-outline d-inline-block" style="background-color:#0077B5">
-              <a href="https://www.linkedin.com/company/">
-                <i class="fa fa-2x fa-fw fa-linkedin text-white"></i></a>
-            </div>
-            <div class="bg-circle-outline d-inline-block" style="background-color:#d34836">
-              <a href="https://www.google.com/">
-                <i class="fa fa-2x fa-fw fa-google text-white"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10 col-sm-10 col-md-10 offset-md-2 ">
+			<ul class="list-unstyled list-inline social text-center">
+				<li class="list-inline-item"><a href="https://pl-pl.facebook.com/"><i
+						class="fa fa-facebook"></i></a></li>
+				<li class="list-inline-item"><a href="https://twitter.com/?lang=pl"><i
+						class="fa fa-twitter"></i></a></li>
+				<li class="list-inline-item"><a href="https://www.instagram.com/"><i
+						class="fa fa-instagram"></i></a></li>
+				<li class="list-inline-item"><a href="https://plus.google.com/discover"><i
+						class="fa fa-google-plus"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div
+			class="col-xs-10 col-sm-10 col-md-10 offset-md-2 text-center ">
+			© 2018 Copyright: <a href="https://github.com/Lithaos">Lithaos</a>
+		</div>
+	</div>
 </footer>
-<p id="copyright" class="text-center"> Copyright © Lithaos. All right reserved. </p>
-
