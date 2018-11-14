@@ -94,9 +94,12 @@ ul.topnav li.right a:hover {
 .categoryItem a {
 	color: white;
 	text-decoration: none;
+		transition: 0.7s;
 }
 
 .categoryItem a:hover {
 	color: red;
 	text-decoration: none;
+	transition: 1s;
+	margin-left: 10px;
 }
